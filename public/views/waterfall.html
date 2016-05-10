@@ -12,5 +12,8 @@
     This is the total minimum amount to pay each month ${{totalBase}}
 </div>
 <div class="monthlyCommit">
-    <p>Enter the total amount that you are planning on paying towards your monthly debts <input type="text" name="monthlyCommit" placeholder="Monthly Commit..." ng-submit="monthlyCommit"></p>
+    <p>Enter the total amount that you are planning on paying towards your monthly debts <input type="text" name="monthlyCommit" placeholder="Monthly Commit..." ng-model="monthlyCommit"></p><button type="button" name="monthlyCommit" ng-click="commit(monthlyCommit)">Commit It</button>
+</div>
+<div class="waterall">
+    That gives you your first waterfall of ${{waterfall}}
 </div>

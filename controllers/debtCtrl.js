@@ -1,4 +1,4 @@
-var Debt = require('../models/debtModel.js');
+var Debt = require('../models/debtSchema.js');
 
 module.exports = {
 
@@ -31,7 +31,7 @@ module.exports = {
                 res.status(200).json(resp);
             }
         });
-    }
+    },
 
 
 
