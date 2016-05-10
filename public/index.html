@@ -7,16 +7,15 @@
         <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
-<!-- ****  PLEASE SET CONTROLLERS IN THEIR PROPER PLACES  ****     -->
-    <body ng-app='XX_newAPPnameHere_XX' ng-controller='XXX_newControllerNameHere_XX'>
+    <body ng-app='waterfallApp'>
 
         <div id="mainWrapper">
 
     		<div id="headerWrapper">
-    		</div><!-- #header -->
+    		</div><!-- #headerWrapper -->
 
     		<div id="contentWrapper">
-
+                
                 <ui-view></ui-view>
 
 
@@ -27,21 +26,21 @@
 
 
 
-    		</div><!-- #content -->
+    		</div><!-- #contentWrapper -->
 
     		<div id="footerWrapper">
-    		</div><!-- #footer -->
+    		</div><!-- #footerWrapper -->
 
-    	</div><!-- #wrapper -->
+    	</div><!-- #mainWrapper -->
 
 
 <!-- ****  PLEASE CHECK THE FOLLOWING SCRIPTS TO BE SURE TO HAVE ALL YOU LINKS  **** -->
 <!-- ****  DO YOU HAVE THEM ALL? JQUERY? ANGULAR? ETC, ETC, ETC.  **** -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-        <script src="XX_newAPPnameHere.js"></script>
-        <script src="XXX_newControllerNameHere_XX.js"></script>
-        <script src="XXX_newServiceNameHere_XX.js"></script>
+        <script src="/js/app.js"></script>
+        <script src="/js/mainCtrl.js"></script>
+        <script src="/js/mainSvc.js"></script>
 
     </body>
 </html>

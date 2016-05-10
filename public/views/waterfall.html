@@ -1,0 +1,16 @@
+<div class="inputDebts">
+    <input type="text" name="name" placeholder="Creditor Name..." ng-model="newDebt.name">
+    <input type="text" name="rate" placeholder="Interest rate %...ie. 19.9..." ng-model="newDebt.rate">
+    <input type="text" name="base" placeholder="Minimum base payment..." ng-model="newDebt.base">
+    <input type="text" name="balance" placeholder="Balance right now..." ng-model="newDebt.balance">
+    <button type="button" name="enter" ng-click="addDebt(newDebt)">Add It</button>
+</div>
+<div class="showDebts" ng-repeat="debt in debts">
+    <button type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)">delete</button><span>{{debt.name}} ---</span><span> {{debt.rate}} ---</span><span> {{debt.base}} ---</span><span> {{debt.balance}} </span>
+</div>
+<div class="totalBase">
+    This is the total minimum amount to pay each month ${{totalBase}}
+</div>
+<div class="monthlyCommit">
+    <p>Enter the total amount that you are planning on paying towards your monthly debts <input type="text" name="monthlyCommit" placeholder="Monthly Commit..." ng-submit="monthlyCommit"></p>
+</div>
