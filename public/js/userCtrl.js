@@ -16,10 +16,6 @@ angular.module('waterfallApp')
         });
     };
 
-    $scope.commit = function(monthlyCommit) {
-        $scope.waterfall = monthlyCommit - $scope.totalBase;
-        return $scope.waterfall;
-    };
 
 
 });
