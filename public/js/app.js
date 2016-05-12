@@ -32,7 +32,7 @@ angular.module('waterfallApp', ['ui.router'])
     .state('landingPage', {
         url: '/landingPage',
         templateUrl: 'views/landingPage.html',
-        controller: 'mainCtrl',
+        controller: 'landingCtrl',
         resolve: {
             user: function() {
                 return {};

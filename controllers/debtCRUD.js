@@ -48,6 +48,18 @@ module.exports = {
         });
     },
 
+    payDebt: function(req, res, next) {
+        Debt.findByIdAndUpdate(req.params.id, function(err, resp) {
+            if (err) {
+                res.status(500).json(err);
+            } else {
+                
+
+                res.status(200).json(resp);
+            }
+        });
+    },
+
 
 
 

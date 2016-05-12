@@ -73,6 +73,7 @@ app.put('/api/user/:id', userCRUD.updateUser);
 app.post('/api/waterfall', debtCRUD.createNewDebt);
 app.delete('/api/waterfall/:id', debtCRUD.deleteDebt);
 app.get('/api/waterfall', debtCRUD.getDebts);
+app.put('/api/waterfall', debtCRUD.payDebt);
 
 
 

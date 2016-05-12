@@ -1,24 +1,34 @@
 <div class="inputDebts">
     <input type="text" name="name" placeholder="Creditor Name..." ng-model="newDebt.name">
-    <input type="text" name="rate" placeholder="Interest rate %...ie. 19.9..." ng-model="newDebt.rate">
+    <input type="text" name="rate" placeholder="Interest rate %...ie. 19.9" ng-model="newDebt.rate">
     <input type="text" name="base" placeholder="Minimum base payment..." ng-model="newDebt.base">
     <input type="text" name="balance" placeholder="Balance right now..." ng-model="newDebt.balance">
     <button type="button" name="enter" ng-click="addDebt(newDebt)">Add It</button>
 </div>
+
 <div class="">
     <p>
         Your debts are listed below in order of smallest to largest so that you quickly see yourself gaining on them
     </p>
 </div>
+
 <div class="showDebts" ng-repeat="debt in debts | orderBy : 'balance'">
-    <button type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)">delete</button><span>{{debt.name}} ---</span><span> {{debt.rate}} ---</span><span> {{debt.base}} ---</span><span> {{debt.balance}} </span>
+    <button type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)">delete</button><span>Creditor: {{debt.name}} | </span><span> Int Rate: {{debt.rate}}% | </span><span>Base Pmt: ${{debt.base}} | </span><span>Balance: ${{debt.balance}}</span><button type="button" ng-click="payDebt()" ng-hide="$index === 0">Pay Base Amount</button>
+    <button type="button" name="first"  ng-click="payWithWaterfall" ng-show="$index === 0">Pay Base Plus Waterfall amount</button>
 </div>
+
 <div class="totalBase">
     This is the total minimum amount to pay each month ${{totalBase}}
 </div>
+
 <div class="monthlyCommit">
-    <p>Enter the total amount that you are planning on paying towards your monthly debts <input type="text" name="monthlyCommit" placeholder="Monthly Commitment..." ng-model="monthlyCommit"></p><button type="button" name="monthlyCommit" ng-click="updateUser(monthlyCommit)">Commit It</button>
+    <p>Enter the total amount that you are planning on paying towards your monthly debts</p> <input type="text" name="monthlyCommit" placeholder="Monthly Commitment..." ng-model="monthlyCommit"><button type="button" name="monthlyCommit" ng-click="updateUser(monthlyCommit)">Commit It</button>
 </div>
+
 <div class="waterall">
-    That gives you your first waterfall of ${{waterfall}} Congratulations!
+    Your first money waterfall will be ${{waterfall}}
+</div>
+
+<div class="payAllButton">
+    <button type="button" ng-click="payAll()">Pay All Base Pmts</button>
 </div>
