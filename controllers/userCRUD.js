@@ -49,20 +49,16 @@ module.exports = {
         });
     },
 
-    Login: function(req, res, next){
-        User.findOne(req.body, function(err, response){
-            if(err){
+    updateUser: function(req, res, next) {
+        User.findByIdAndUpdate(req.params.id, req.body, function(err, resp) {
+            if (err) {
                 res.status(500).json(err);
-            }else{
-                if(response){
-                    res.status(200).json({login: true, user: response});
-                }else{
-                    res.status(200).json({login: false});
-                }
-
+            } else {
+                res.status(200).json(resp);
             }
         });
     }
+
 
 
 

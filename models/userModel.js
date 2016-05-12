@@ -9,7 +9,8 @@ var userSchema = new mongoose.Schema({
     debts: [
         {type: objectId, ref: 'Debt'}
     ],
-    facebookId: {type: Number, required: false}
+    facebookId: {type: Number, required: false},
+    monthlyCommit: {type: Number}
 });
 
 module.exports = mongoose.model('User', userSchema);

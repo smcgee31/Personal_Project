@@ -68,6 +68,7 @@ mongoose.connect('mongodb://localhost/waterfall', function(err) {
 
 app.get('/api/user', userCRUD.getUser);
 app.post('/api/user', userCRUD.createNewUser);
+app.put('/api/user/:id', userCRUD.updateUser);
 
 app.post('/api/waterfall', debtCRUD.createNewDebt);
 app.delete('/api/waterfall/:id', debtCRUD.deleteDebt);

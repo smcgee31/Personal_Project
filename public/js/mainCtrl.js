@@ -2,24 +2,31 @@ angular.module('waterfallApp')
 .controller('mainCtrl', function($scope, mainSvc, $state, user) {
 
     $scope.user = user.data;
+    $scope.debts = user.data.debts;
 
-    $scope.getCurrentUser = function(){
-        mainSvc.getCurrentUser()
-        .then(function(response){
-            $scope.user = response.data;
-        });
+    $scope.commit = function(monthlyCommit) {
+        $scope.waterfall = monthlyCommit - $scope.totalBase;
+        return $scope.waterfall;
     };
 
-    $scope.getDebts = function() {
+    $scope.getBaseTotal = function() {
+        var totalBaseArr = [];
+        var debts = $scope.user.debts;
+        for (var i = 0; i < debts.length; i++) {
+            totalBaseArr.push(debts[i].base);
+        }
+        $scope.totalBase = totalBaseArr.reduce(function(a, b) { return a + b; }, 0);
+        if ($scope.user.monthlyCommit) {
+            $scope.commit($scope.user.monthlyCommit);
+        }
+    };$scope.getBaseTotal();
+
+    $scope.refreshUser = function() {
         mainSvc.getCurrentUser()
         .then(function(response) {
-            var totalBaseArr = [];
-            var debts = response.data.debts;
-            for (var i = 0; i < debts.length; i++) {
-                totalBaseArr.push(debts[i].base);
-            }
-            $scope.totalBase = totalBaseArr.reduce(function(a, b) { return a + b; }, 0);
-            $scope.getCurrentUser();
+            $scope.user = response.data;
+            $scope.debts = response.data.debts;
+            $scope.getBaseTotal();
         });
     };
 
@@ -29,20 +36,23 @@ angular.module('waterfallApp')
         mainSvc.addDebt(newDebt)
         .then(function(response) {
             $scope.newDebt = {};
-            $scope.getDebts();
+            $scope.refreshUser();
         });
     };
 
     $scope.deleteDebt = function(debt) {
         mainSvc.deleteDebt(debt)
         .then(function(response) {
-            $scope.getDebts();
+            $scope.refreshUser();
         });
     };
 
-    $scope.commit = function(monthlyCommit) {
-        $scope.waterfall = monthlyCommit - $scope.totalBase;
-        return $scope.waterfall;
+
+    $scope.updateUser = function(monthlyCommit) {
+        mainSvc.updateUser($scope.user._id, {monthlyCommit: monthlyCommit})
+        .then(function(response) {
+            $scope.refreshUser();
+        });
     };
 
 

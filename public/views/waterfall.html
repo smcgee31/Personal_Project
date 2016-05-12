@@ -5,15 +5,20 @@
     <input type="text" name="balance" placeholder="Balance right now..." ng-model="newDebt.balance">
     <button type="button" name="enter" ng-click="addDebt(newDebt)">Add It</button>
 </div>
-<div class="showDebts" ng-repeat="debt in user.debts">
+<div class="">
+    <p>
+        Your debts are listed below in order of smallest to largest so that you quickly see yourself gaining on them
+    </p>
+</div>
+<div class="showDebts" ng-repeat="debt in debts | orderBy : 'balance'">
     <button type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)">delete</button><span>{{debt.name}} ---</span><span> {{debt.rate}} ---</span><span> {{debt.base}} ---</span><span> {{debt.balance}} </span>
 </div>
 <div class="totalBase">
     This is the total minimum amount to pay each month ${{totalBase}}
 </div>
 <div class="monthlyCommit">
-    <p>Enter the total amount that you are planning on paying towards your monthly debts <input type="text" name="monthlyCommit" placeholder="Monthly Commitment..." ng-model="monthlyCommit"></p><button type="button" name="monthlyCommit" ng-click="commit(monthlyCommit)">Commit It</button>
+    <p>Enter the total amount that you are planning on paying towards your monthly debts <input type="text" name="monthlyCommit" placeholder="Monthly Commitment..." ng-model="monthlyCommit"></p><button type="button" name="monthlyCommit" ng-click="updateUser(monthlyCommit)">Commit It</button>
 </div>
 <div class="waterall">
-    That gives you your first waterfall of ${{waterfall}} Congratulations! 
+    That gives you your first waterfall of ${{waterfall}} Congratulations!
 </div>

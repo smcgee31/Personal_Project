@@ -1,16 +1,6 @@
 angular.module('waterfallApp')
 .service('mainSvc', function($http) {
 
-    // this.newUser = function(user) {
-    //     return $http({
-    //         method: 'POST',
-    //         url: '/api/user',
-    //         data: user
-    //     }).then(function(response) {
-    //         return response.data;
-    //     });
-    // };
-
     this.getCurrentUser = function() {
         return $http({
             method: 'GET',
@@ -31,6 +21,16 @@ angular.module('waterfallApp')
         return $http({
             method: 'GET',
             url: '/api/user'
+        }).then(function(response) {
+            return response.data;
+        });
+    };
+
+    this.updateUser = function(id, newUserData) {
+        return $http({
+            method: 'PUT',
+            url: '/api/user/' + id,
+            data: newUserData
         }).then(function(response) {
             return response.data;
         });
