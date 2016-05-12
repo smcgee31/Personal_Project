@@ -5,7 +5,7 @@
     <input type="text" name="balance" placeholder="Balance right now..." ng-model="newDebt.balance">
     <button type="button" name="enter" ng-click="addDebt(newDebt)">Add It</button>
 </div>
-<div class="showDebts" ng-repeat="debt in debts">
+<div class="showDebts" ng-repeat="debt in user.debts">
     <button type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)">delete</button><span>{{debt.name}} ---</span><span> {{debt.rate}} ---</span><span> {{debt.base}} ---</span><span> {{debt.balance}} </span>
 </div>
 <div class="totalBase">

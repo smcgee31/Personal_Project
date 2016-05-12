@@ -1,22 +1,21 @@
 angular.module('waterfallApp')
 .controller('mainCtrl', function($scope, mainSvc, $state) {
 
-    //login function used on loginUser,
-    //if response.login from the server comes back as true then we change the view to the store page
-    $scope.login = function(user){ mainSvc.login(user).then(function(response){
+    $scope.getCurrentUser = function(){
+        mainSvc.getCurrentUser()
+        .then(function(response){
             console.log(response);
-            if(response.login) {
-                mainService.getUser(response.user._id).then(function(response){
-                    $scope.user = response;
-                    $state.go('waterfall');
-                });
-            }
+            $scope.user = response.data;
+            console.log($scope.user);
+            console.log($scope.user.displayName);
         });
     };
+    $scope.getCurrentUser();
+
 
 
     $scope.getDebts = function() {
-        mainSvc.getDebts()
+        mainSvc.getCurrentUser()
         .then(function(response) {
             var totalBaseArr = [];
             $scope.debts = response;
@@ -25,6 +24,7 @@ angular.module('waterfallApp')
                 totalBaseArr.push(response[i].base);
             }
             $scope.totalBase = totalBaseArr.reduce(function(a, b) { return a + b; }, 0);
+            $scope.getCurrentUser();
         });
     };
 
@@ -47,10 +47,6 @@ angular.module('waterfallApp')
         });
     };
 
-    $scope.commit = function(monthlyCommit) {
-        $scope.waterfall = monthlyCommit - $scope.totalBase;
-        return $scope.waterfall;
-    };
 
 
 

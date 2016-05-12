@@ -1,10 +1,11 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-var cors = require('cors');
+// var cors = require('cors');
 var session = require('express-session');
 var passport = require('passport');
-var debtCtrl = require('./controllers/debtCtrl.js');
+var debtCRUD = require('./controllers/debtCRUD.js');
+var userCRUD = require('./controllers/userCRUD.js');
 var FacebookStrategy = require('passport-facebook').Strategy;
 // ^^ capitalized because it is a constructor
 var keys = require('./keys.js');
@@ -12,11 +13,13 @@ var keys = require('./keys.js');
 
 var app = express();
 
-app.use(session({secret: 'some-random-string'}));
+
+app.use(session({secret: keys.sessionSecret, saveUninitialized: true}));
 // ^^ use session must come before you set passport.session
 app.use(passport.initialize());
 app.use(passport.session());
 
+// ------------  facebook Auth ------------
 passport.use(new FacebookStrategy({
   clientID: keys.facebookKey,
   clientSecret: keys.facebookSecret,
@@ -49,17 +52,19 @@ app.get('/me', function(req, res, next) {
     res.send(req.user);
 });
 
+// ---------- end facebook Auth -----------
+
 
 
 app.use(express.static(__dirname+'/public'));
 
-var corsOptions = {
-    origin: 'http://localhost:3030'
-};
+// var corsOptions = {
+//     origin: 'http://localhost:3030'
+// };
 
 
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 mongoose.connect('mongodb://localhost/waterfall', function(err) {
     if (err) {
@@ -67,10 +72,12 @@ mongoose.connect('mongodb://localhost/waterfall', function(err) {
     }
 });
 
-app.post('/api/waterfall', debtCtrl.createNewDebt);
-app.delete('/api/waterfall/:id', debtCtrl.deleteDebt);
-app.get('/api/waterfall', debtCtrl.getDebts);
+app.get('/api/user', userCRUD.getUser);
+app.post('/api/user', userCRUD.createNewUser);
 
+app.post('/api/waterfall', debtCRUD.createNewDebt);
+app.delete('/api/waterfall/:id', debtCRUD.deleteDebt);
+app.get('/api/waterfall', debtCRUD.getDebts);
 
 
 

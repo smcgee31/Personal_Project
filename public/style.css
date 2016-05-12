@@ -17,17 +17,99 @@ body {
 	position:relative;
 }
 #headerWrapper {
-	background:#ededed;
+	background:#9BCB52;
 	padding:10px;
 }
 #contentWrapper {
-	padding-bottom:100px; /* Height of the footer element */
+	padding-bottom: 60px; /* Height of the footer element */
 }
+
+
+
+.landingBackground {
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+}
+.landingBackground img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 50%;
+	min-height: 50%;
+}
+.waterfallLanding {
+	width: 600px;
+	background: rgba(255, 255, 255, .5);
+	font-family: 'Arvo', serif;
+	font-size: 48px;
+	font-weight: 700;
+	position: fixed;
+	left: calc(50% - 300px);
+	top: 120px;
+	padding: 20px;
+	border-radius: 10px;
+}
+.waterfallLanding >p {
+	text-align: center;
+	color: #9BCB52;
+	text-shadow: 2px 2px 1px #3a4726;
+}
+
+.waterfallCopy {
+	margin: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: justify;
+}
+.buttonsArea {
+	width: 100%;
+	text-align: center;
+}
+.signUpButton {
+	background: #DA751D;
+	width: 200px;
+	height: 40px;
+	border-radius: 5px;
+	margin-bottom: 12px;
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-size: 16px;
+	color: white;
+	text-decoration: none;
+}
+.facebookButton {
+	width: 200px;
+	height: 40px;
+	background-image: url(/img/LoginFB_medium.png);
+	border-radius: 5px;
+
+}
+
+
+
+
+
+
 #footerWrapper {
-	background:#ffab62;
-	width:100%;
-	height:100px;
-	position:absolute;
-	bottom:0;
-	left:0;
+	background: #DA751D;
+	width: 100%;
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
 }

@@ -1,13 +1,15 @@
 var mongoose = require('mongoose');
-var debtSchema = require("./debtSchema.js");
-
+var objectId  = mongoose.Schema.Types.ObjectId;
 
 var userSchema = new mongoose.Schema({
-    fName: {type: String, required: true},
-    lname: {type: String, required: true},
-    email: {type: Number, required: true},
+    fName: {type: String, required: false},
+    lname: {type: String, required: false},
+    email: {type: Number, required: false},
     username: {type: String, required: true, minLength: 3},
-    debts: debtSchema
+    debts: [
+        {type: objectId, ref: 'Debt'}
+    ],
+    facebookId: {type: Number, required: false}
 });
 
 module.exports = mongoose.model('User', userSchema);
