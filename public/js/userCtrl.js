@@ -5,7 +5,6 @@ angular.module('waterfallApp')
     $scope.newUser = function(user) {
         mainSvc.newUser(user)
         .then(function(response) {
-            console.log(response.data, 'userCtrl-$scope.newUser-response.data');
             $scope.getUser();
         });
     };

@@ -3,16 +3,14 @@ var User = require('../models/userModel.js');
 module.exports = {
 
     createNewUser: function(req, res, next) {
-        console.log(req.body.id, 'userCRUD createNewUser-start');
-        User.findOne({facebookId: req.body.id}).populate('debts').exec(function(err, resp) {
-            console.log(resp, 'userCRUD.js createNewUser User.findOne...populate-debts-resp');
+        User.findOne({facebookId: req.body.id})
+        .populate('debts')
+        .exec(function(err, resp) {
             if (err) {
-                console.log(err, 'createNewUser err');
                 res.status(500).json(err);
             } else {
                 if (resp) {
                     // req.user = resp;
-                    console.log(req.user, "createNewUser req.user");
                     res.status(200).json(resp);
                 } else {
                     var newUser = new User({username: req.body.displayName, facebookId: req.body.id});
@@ -40,8 +38,6 @@ module.exports = {
     },
 
     getUser: function(req, res, next) {
-        console.log("req.user");
-        console.log(req.user);
         User.findOne({facebookId: req.user.id})
         .populate({path: 'debts', select: 'name rate base balance'})
         .exec(function(err, resp) {

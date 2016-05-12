@@ -22,7 +22,6 @@ angular.module('waterfallApp')
                 data: response.data
             })
             .then(function(response) {
-                console.log(response.data, 'mainSvc-getCurrentUser-POST if new User');
                 return response;
             });
         });
