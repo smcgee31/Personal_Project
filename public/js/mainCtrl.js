@@ -1,16 +1,16 @@
 angular.module('waterfallApp')
-.controller('mainCtrl', function($scope, mainSvc, $state) {
+.controller('mainCtrl', function($scope, mainSvc, $state, user) {
+
+    $scope.user = user;
 
     $scope.getCurrentUser = function(){
         mainSvc.getCurrentUser()
         .then(function(response){
-            console.log(response);
             $scope.user = response.data;
-            console.log($scope.user);
-            console.log($scope.user.displayName);
+            console.log($scope.user, 'maintCtrl-getCurrentUser-$scope.user');
+            console.log($scope.user.displayName, 'mainCtrl-getCurrentUser-$scope.user.displayName');
         });
     };
-    $scope.getCurrentUser();
 
 
 
@@ -19,7 +19,7 @@ angular.module('waterfallApp')
         .then(function(response) {
             var totalBaseArr = [];
             $scope.debts = response;
-            console.log(response);
+            console.log(response, 'mainCtrl-getDebts-$scope.debts');
             for (var i = 0; i < response.length; i++) {
                 totalBaseArr.push(response[i].base);
             }
@@ -28,7 +28,6 @@ angular.module('waterfallApp')
         });
     };
 
-    $scope.getDebts();
     $scope.newDebt = {};
 
 

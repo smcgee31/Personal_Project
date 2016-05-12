@@ -58,13 +58,7 @@ app.get('/me', function(req, res, next) {
 
 app.use(express.static(__dirname+'/public'));
 
-// var corsOptions = {
-//     origin: 'http://localhost:3030'
-// };
-
-
 app.use(bodyParser.json());
-// app.use(cors(corsOptions));
 
 mongoose.connect('mongodb://localhost/waterfall', function(err) {
     if (err) {

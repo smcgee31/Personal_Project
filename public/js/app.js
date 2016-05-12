@@ -12,7 +12,12 @@ angular.module('waterfallApp', ['ui.router'])
     .state('waterfall', {
         url: '/waterfall',
         templateUrl: 'views/waterfall.html',
-        controller: 'mainCtrl'
+        controller: 'mainCtrl',
+        resolve: {
+            user: function(mainSvc) {
+                return mainSvc.getCurrentUser();
+            }
+        }
     })
     .state('loginError', {
         url: '/loginError',
@@ -27,7 +32,12 @@ angular.module('waterfallApp', ['ui.router'])
     .state('landingPage', {
         url: '/landingPage',
         templateUrl: 'views/landingPage.html',
-        controller: 'mainCtrl'
+        controller: 'mainCtrl',
+        resolve: {
+            user: function() {
+                return {};
+            }
+        }
     });
 
 
