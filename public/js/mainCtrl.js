@@ -55,15 +55,14 @@ angular.module('waterfallApp')
         });
     };
 
-    $scope.pay
-    //(balance + (balance * (rate/12))) - base
-
-    // $scope.payAll = function() {
-        // take the base pmt and subtract it from the balance
-        // and also add the waterfall amount to the first debt's base for the subtraction
-        // $scope.
+    // $scope.payBase = function() {
+    //     //balance = (balance + (balance * (rate/12))) - base
+    //
     // };
-
-
+    //
+    // $scope.payWithWaterfall = function() {
+    //     //balance = (balance + (balance * (rate/12))) - (base + waterfall)
+    //
+    // };
 
 });

@@ -9,7 +9,6 @@ module.exports = {
             if (err) {
                 res.status(500).json(err);
             } else {
-                // res.status(200).json(resp);
                 User.findOne({facebookId: req.user.id}, function(err, resp){
                     if (err) {
                         res.status(500).json(err);
@@ -53,8 +52,6 @@ module.exports = {
             if (err) {
                 res.status(500).json(err);
             } else {
-                
-
                 res.status(200).json(resp);
             }
         });

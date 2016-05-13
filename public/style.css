@@ -11,6 +11,8 @@ body {
 	margin:0;
 	padding:0;
 	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	background: #EAFFC9;
 }
 #mainWrapper {
 	min-height:100%;
@@ -62,7 +64,7 @@ body {
 }
 .waterfallLanding >p {
 	text-align: center;
-	color: #9BCB52;
+	color: #34E03E;
 	text-shadow: 2px 2px 1px #3a4726;
 }
 
@@ -96,11 +98,98 @@ body {
 	height: 40px;
 	background-image: url(/img/LoginFB_medium.png);
 	border-radius: 5px;
-
 }
 
 
 
+
+
+
+
+
+
+.debtsBox{
+	width: 732px;
+	/*border: 1px solid blue;*/
+	margin-left: calc(50% - 366px);
+	margin-top: 60px;
+	border-radius: 8px;
+	box-shadow: 0px 1px 2px #888;
+	-webkit-box-shadow: 0px 1px 2px #888;
+	background-color: #fff;
+}
+.topTitle {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 700;
+}
+.inputDebtsInstr {
+	width: 140px;
+	height: 120px;
+	/*border: 1px solid blue;*/
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 20px;
+}
+.inputDebtsInstr p {
+	margin-top: 20px;
+	font-size: 14px;
+}
+.inputDebtsContainer {
+	width: 440px;
+	height: 120px;
+	/*border: 1px solid blue;*/
+	display: inline-block;
+	vertical-align: top;
+}
+	.inputsArea {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-start;
+		/*border: 1px solid blue;*/
+    	margin-top: 12px;
+	}
+		.input {
+			width: 200px;
+			height: 40px;
+			border-bottom: 1px solid #2A0C8D;
+			margin: 6px;
+
+		}
+			.input input {
+				border: none;
+				line-height: 36px;
+    			font-size: 16px;
+			}
+
+.addDebtButtonContainer {
+	width: 140px;
+	height: 120px;
+	display: inline-block;
+	/*border: 1px solid blue;*/
+	vertical-align: top;
+}
+.addDebtButtonContainer button {
+	vertical-align: middle;
+	width: 80px;
+	height: 80px;
+	margin-top: 20px;
+	background: #34E03E;
+	border-radius: 5px;
+	font-size: 16px;
+}
+.debtCards {
+	width: 732px;
+	margin-left: calc(50% - 366px);
+	border-radius: 8px;
+	box-shadow: 0px 1px 2px #888;
+	-webkit-box-shadow: 0px 1px 2px #888;
+	background-color: #fff;
+	margin: 20px auto;
+	padding: 12px;
+}
 
 
 
