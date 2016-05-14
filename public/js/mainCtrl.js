@@ -4,6 +4,12 @@ angular.module('waterfallApp')
     $scope.user = user.data;
     $scope.debts = user.data.debts;
 
+    $scope.predicate = '+balance';
+    // $scope.order = function(predicate) {
+    //     // $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+    //     $scope.predicate = predicate;
+    // };
+
     $scope.commit = function(monthlyCommit) {
         $scope.waterfall = monthlyCommit - $scope.totalBase;
         return $scope.waterfall;
@@ -55,14 +61,7 @@ angular.module('waterfallApp')
         });
     };
 
-    // $scope.payBase = function() {
-    //     //balance = (balance + (balance * (rate/12))) - base
-    //
-    // };
-    //
-    // $scope.payWithWaterfall = function() {
-    //     //balance = (balance + (balance * (rate/12))) - (base + waterfall)
-    //
-    // };
+
+
 
 });

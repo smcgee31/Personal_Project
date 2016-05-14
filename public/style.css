@@ -39,6 +39,7 @@ body {
 	-o-filter: blur(5px);
 	-ms-filter: blur(5px);
 	filter: blur(5px);
+	z-index: -1;
 }
 .landingBackground img {
 	position: absolute;
@@ -173,6 +174,9 @@ body {
 	/*border: 1px solid blue;*/
 	vertical-align: top;
 }
+.monthlyCommit input {
+	width: 136px;
+}
 .deleteDebtButton {
 	width: 20px;
 	height: 20px;
@@ -200,6 +204,18 @@ body {
 	font-weight: bold;
 	margin: 0 2px;
 }
+.payoffButtonsContainer {
+	width: 732px;
+	margin-left: calc(50% - 366px);
+	border-radius: 8px;
+	box-shadow: 0px 1px 2px #888;
+	-webkit-box-shadow: 0px 1px 2px #888;
+	background-color: #fff;
+	margin: 20px auto;
+	padding: 12px;
+	line-height: 20px;
+
+}
 
 
 
@@ -211,5 +227,5 @@ body {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: -1;
+	/*z-index: -1;*/
 }

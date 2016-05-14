@@ -27,16 +27,23 @@
 
 
     <div class="monthlyCommit">
-        <p>Enter the total amount that you are planning on paying towards your monthly debts</p> <input type="text" name="monthlyCommit" placeholder="Monthly Commitment..." ng-model="monthlyCommit"><button type="button" name="monthlyCommit" ng-click="updateUser(monthlyCommit)">Commit It</button>
+        <p>Enter the total amount that you are planning on paying towards your monthly debts</p> <input type="text" name="monthlyCommit" placeholder="Monthly Commit..." ng-model="monthlyCommit" ng-keyup="$event.keyCode === 13 && updateUser(monthlyCommit)">
     </div>
 
     <div class="waterall">
-        Your first money waterfall will be ${{waterfall}}
+        Your first money waterfall will be {{waterfall | currency}}
     </div>
 
 </div><!-- debtsBox -->
 
-<div class="debtCards" ng-repeat="debt in debts | orderBy : 'balance'">
+<div class="payoffButtonsContainer">
+    <button type="button" ng-click="predicate='+balance'">Sort and Get payoff dates with Smallest Balance First</button>
+    <span class="sortorder" ng-show="predicate === '+balance'"></span>
+    <button type="button" ng-click="predicate='-rate'">Sort and Get payoff dates with Highest Interest First</button>
+    <span class="sortorder" ng-show="predicate === '-rate'"></span>
+</div>
+
+<div class="debtCards" ng-repeat="debt in debts | orderBy : predicate">
     <div class="debtSide">
         <button class="deleteDebtButton" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button><span>Creditor: </span><span class="dCard_credName">{{debt.name}}</span><span> {{debt.rate}}%</span>
         <p>Base Pmt: {{debt.base | currency}}</p>
