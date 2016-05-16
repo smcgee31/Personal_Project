@@ -1,5 +1,5 @@
 angular.module('waterfallApp')
-.controller('userCtrl', function($scope, mainSvc, $state) {
+.controller('signupCtrl', function($scope, mainSvc, $state) {
 
 
     $scope.newUser = function(user) {

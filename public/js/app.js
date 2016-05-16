@@ -24,15 +24,10 @@ angular.module('waterfallApp', ['ui.router'])
             }
         }
     })
-    .state('loginError', {
-        url: '/loginError',
-        templateUrl: 'views/loginError.html',
-        controller: 'userCtrl'
-    })
-    .state('user', {
-        url: '/user',
-        templateUrl: 'views/user.html',
-        controller: 'userCtrl'
+    .state('signup', {
+        url: '/signup',
+        templateUrl: 'views/signup.html',
+        controller: 'signupCtrl'
     })
     .state('landingPage', {
         url: '/landingPage',

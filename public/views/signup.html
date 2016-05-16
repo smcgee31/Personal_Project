@@ -17,21 +17,23 @@
             <div class="formHolder">
                 <form class="userForm" action="/auth/login">
                     <div class="formInputHolder">
-                        <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="credentials.email">
+                        <input class="formItemInput" type="text" name="fName" placeholder="First name:" ng-model="user.fName">
                     </div>
                     <div class="formInputHolder">
-                        <span><input class="formItemInput" type="password" name="password" maxlength="9" placeholder="Password:" ng-model="credentials.password"></span>
+                        <input class="formItemInput" type="text" name="lName" placeholder="Last name:" ng-model="user.lName">
                     </div>
                     <div class="formInputHolder">
-                        <button type="button" name="login" class="loginButton" ng-click="register(credentials)">Log In</button>
+                        <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="user.email">
                     </div>
                     <div class="formInputHolder">
-                        <a href="/login/facebook">
-                            <button class="facebookButton" type="button" name="facebookButton"></button>
-                        </a>
+                        <input class="formItemInput" type="password" name="password" placeholder="Password:" ng-model="user.password">
                     </div>
-            </div>
 
+                    <a ui-sref="/waterfall">
+                        <button class="loginButton" type="button" name="getStarted" ng-click="newUser(user) ">Now lets look at your debts</button>
+                    </a>
+                </form>
+            </div>
         </div>
     </div>
 
