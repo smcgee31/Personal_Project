@@ -5,9 +5,14 @@ angular.module('waterfallApp', ['ui.router'])
 
     $stateProvider
     .state('login', {
-        url: '/loginUser',
-        templateUrl: 'views/loginUser.html',
-        controller: 'mainCtrl'
+        url: '/login',
+        templateUrl: 'views/login.html',
+        controller: 'mainCtrl',
+        resolve: {
+            user: function() {
+                return {};
+            }
+        }
     })
     .state('waterfall', {
         url: '/waterfall',
@@ -22,7 +27,7 @@ angular.module('waterfallApp', ['ui.router'])
     .state('loginError', {
         url: '/loginError',
         templateUrl: 'views/loginError.html',
-        controller: 'loginErrorCtrl'
+        controller: 'userCtrl'
     })
     .state('user', {
         url: '/user',

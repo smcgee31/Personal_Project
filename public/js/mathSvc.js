@@ -30,7 +30,7 @@ angular.module('waterfallApp')
         for (var j = 0; j < debts.length; j++) {
             debts[j].newBalance = debts[j].balance;
         }
-        // bubble sort the debts array based on the users choice
+        // sort the debts array based on the users choice
         debts = sortDebts(debts, 'balance');
         // while loop until the debts array is empty
         while (debts.length > 0) {
@@ -57,9 +57,6 @@ angular.module('waterfallApp')
                     // and remove the paid debt from the debts array and put into the newDebtsArray
                     newDebtsArray.push(debts.splice(0,1)[0]);
                 }
-            }
-            if (debts.length === 0) {
-                break;
             }
         }
         console.log(newDebtsArray);
