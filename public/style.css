@@ -12,7 +12,13 @@ body {
 	padding:0;
 	height:100%;
 	font-family: 'Open Sans', sans-serif;
-	background: #EAFFC9;
+	/*background: #EAFFC9;*/
+	background: #9BCB52; /* Old browsers */
+	background: -moz-linear-gradient(top,  #9BCB52 0%, #DA751D 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #9BCB52 0%,#DA751D 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #9BCB52 0%,#DA751D 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9BCB52', endColorstr='#DA751D',GradientType=0 ); /* IE6-9 */
+
 }
 #mainWrapper {
 	min-height:100%;
@@ -62,6 +68,8 @@ body {
 	top: 120px;
 	padding: 20px;
 	border-radius: 10px;
+
+
 }
 .waterfallLanding >p {
 	text-align: center;

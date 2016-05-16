@@ -2,6 +2,7 @@ angular.module('waterfallApp')
 .controller('mainCtrl', function($scope, mainSvc, $state, user) {
 
     $scope.user = user.data;
+    console.log(user.data);
     $scope.debts = user.data.debts;
 
     $scope.predicate = '+balance';
