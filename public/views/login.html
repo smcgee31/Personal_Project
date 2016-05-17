@@ -20,7 +20,7 @@
                         <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="credentials.email">
                     </div>
                     <div class="formInputHolder">
-                        <span><input class="formItemInput" type="password" name="password" maxlength="9" placeholder="Password:" ng-model="credentials.password"></span>
+                        <span><input class="formItemInput" type="password" name="password" maxlength="9" placeholder="Password:" ng-model="credentials.password" ng-keyup="$event.keyCode === 13 && login(credentials)"></span>
                     </div>
                     <div class="formInputHolder">
                         <button type="submit" name="login" class="loginButton" ng-click="login(credentials)">Log In</button>
@@ -30,7 +30,10 @@
                             <button class="facebookButton" type="button" name="facebookButton"></button>
                         </a>
                     </div> -->
-            </div>
+                    <div class="forgotPassword">
+                        <p >Forgot Password?</p>
+                    </div>
+            </div><!--formHolder-->
 
         </div>
     </div>

@@ -21,7 +21,7 @@ angular.module('waterfallApp')
     }
 
 
-    function payTheBills(waterfall, debts, type) {
+    this.payTheBills = function(waterfall, debts, type) {
         // set month counter to zero
         var months = 0;
         // set new debts array to push to
@@ -59,7 +59,7 @@ angular.module('waterfallApp')
             }
         }
         return newDebtsArray;
-    }
+    };
 
 
 

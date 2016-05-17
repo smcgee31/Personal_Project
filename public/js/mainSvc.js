@@ -78,7 +78,14 @@ angular.module('waterfallApp')
         });
     };
 
-
+    this.logout = function() {
+        return $http({
+            method: 'GET',
+            url: '/logout'
+        }).then(function(response) {
+            return response;
+        });
+    };
 
 
 });

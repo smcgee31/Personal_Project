@@ -10,6 +10,8 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 // ^^ capitalized because it is a constructor
 var keys = require('./keys.js');
 var passport = require('./services/passport.js');
+var moment = require('moment');
+moment().format();
 
 var isAuthed = function(req, res, next) {
     if (!req.isAuthenticated()) {
@@ -66,9 +68,6 @@ app.get('/me', function(req, res, next) {
     res.send(req.user);
 });
 
-
-
-
 app.use(express.static(__dirname+'/public'));
 
 app.use(bodyParser.json());
@@ -89,9 +88,8 @@ app.post('/login', passport.authenticate('local', {
 }));
 app.get('/logout', function(req, res, next) {
   req.logout();
-  return res.status(200).send('logged out');
+  return res.status(200).json('logged out');
 });
-
 
 app.get('/api/user', userCRUD.getUser);
 app.post('/api/user', userCRUD.createNewUser);

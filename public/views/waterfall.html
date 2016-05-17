@@ -9,10 +9,10 @@
 
         <div class="inputsArea">
             <div class="input">
-                <input type="text" name="name" placeholder="Creditor Name..." ng-model="newDebt.name">
+                <input type="text" name="name" placeholder="Creditor Name..." maxlength="20" ng-model="newDebt.name">
             </div>
             <div class="input">
-                <input type="number" name="rate" placeholder="Interest rate %...ie. 19.9" ng-model="newDebt.rate">
+                <input type="number" name="rate" placeholder="Interest rate (ie.19.9)..." ng-model="newDebt.rate">
             </div>
             <div class="input">
                 <input type="number" name="base" placeholder="Minimum base payment..." ng-model="newDebt.base">
@@ -41,13 +41,23 @@
 </div><!-- debtsBox -->
 
 <div class="payoffButtonsContainer">
-    <button type="button" ng-click="predicate='+balance'">Sort and Get payoff dates with Smallest Balance First</button>
-    <span class="sortorder" ng-show="predicate === '+balance'"></span>
-    <button type="button" ng-click="predicate='-rate'">Sort and Get payoff dates with Highest Interest First</button>
-    <span class="sortorder" ng-show="predicate === '-rate'"></span>
+    <p>
+        <button class="payoffButton" type="button" ng-click="payTheBills(waterfall, debts, 'balance')">Sort and pay debts by smallest balance first</button>
+        <!-- <span ng-show="sorter === '+balance'"></span> -->
+    </p>
+    <span class="sortExpl">Recommended because the faster results will help you stick with it!</span>
+    <p>
+        <button class="payoffButton" type="button" ng-click="payTheBills(waterfall, debts, 'rate')">Sort and pay debts by highest interest rate first</button>
+        <!-- <span ng-show="sorter === '-rate'"></span> -->
+    </p>
+    <span class="sortExpl">This method will save some interest in the long run</span>
+
 </div>
 
-<div class="debtCards" ng-repeat="debt in debts | orderBy : predicate">
+<div class="sortMessage">
+    <span>Currently sorted by: {{sorter}}</span>
+</div>
+<div class="debtCards" ng-repeat="debt in debts | orderBy : sorter" ng-repeat="">
     <div class="debtSide">
         <button class="deleteDebtButton" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button>
         <table class="debtsTable">

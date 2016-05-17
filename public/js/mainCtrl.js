@@ -1,5 +1,5 @@
 angular.module('waterfallApp')
-.controller('mainCtrl', function($scope, mainSvc, $state, user) {
+.controller('mainCtrl', function($scope, mainSvc, mathSvc, $state, user) {
 
     $scope.user = user.data;
     $scope.debts = user.data.debts;
@@ -68,7 +68,28 @@ angular.module('waterfallApp')
         });
     };
 
+    $scope.logout = function() {
+        mainSvc.logout()
+        .then(function(response) {
+            $state.go('login');
+        });
+    };
 
+    $scope.payTheBills = function(waterfall, debts, type) {
+        if (type === 'balance') {
+            $scope.sorter='+balance';
+        } else {
+            $scope.sorter='-rate';
+        }
+        $scope.refreshUser();
+        $scope.newDebts = mathSvc.payTheBills(waterfall, debts, type);
+        console.log($scope.newDebts);
+
+        // .then(function(response) {
+        //     // var newDebtsArray = response;
+        //     console.log(response);
+        // });
+    };
 
 
 });

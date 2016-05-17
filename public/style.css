@@ -187,7 +187,11 @@ body {
 	color: white;
 	text-decoration: none;
 }
+.forgotPassword {
+	font-size: 122px;
+	color: skyblue;
 
+}
 
 
 
@@ -202,8 +206,8 @@ body {
 	margin-left: calc(50% - 366px);
 	margin-top: 40px;
 	border-radius: 8px;
-	box-shadow: 0px 1px 2px #888;
-	-webkit-box-shadow: 0px 1px 2px #888;
+	box-shadow: 0px 1px 2px #234214;
+	-webkit-box-shadow: 0px 1px 2px #234214;
 	background-color: #fff;
 }
 .topTitle {
@@ -284,13 +288,18 @@ body {
 	margin-left: 4%;
     margin-top: 12px;*/
 }
+.sortMessage {
+	color: red;
+	font-size: 12px;
+	text-align: center;
+}
 .debtCards {
 	width: 732px;
 	/*height: 100px;*/
 	margin-left: calc(50% - 366px);
 	/*border-radius: 8px;*/
-	/*box-shadow: 0px 1px 2px #888;*/
-	/*-webkit-box-shadow: 0px 1px 2px #888;*/
+	/*box-shadow: 0px 1px 2px #234214;*/
+	/*-webkit-box-shadow: 0px 1px 2px #234214;*/
 	/*background-color: #fff;*/
 	margin: 20px auto;
 	line-height: 20px;
@@ -303,8 +312,8 @@ body {
 	height: 120px;
 	border-top-left-radius: 8px;
 	border-bottom-left-radius: 8px;
-	box-shadow: 0px 1px 2px #888;
-	-webkit-box-shadow: 0px 1px 2px #888;
+	box-shadow: 0px 1px 2px #234214;
+	-webkit-box-shadow: 0px 1px 2px #234214;
 	background-color: #fff;
 	float: left;
 }
@@ -313,8 +322,8 @@ body {
 	height: 120px;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
-	box-shadow: 0px 1px 2px #888;
-	-webkit-box-shadow: 0px 1px 2px #888;
+	box-shadow: 0px 1px 2px #234214;
+	-webkit-box-shadow: 0px 1px 2px #234214;
 	background-color: #fff;
 	float: right;;
 }
@@ -344,14 +353,29 @@ body {
 	width: 732px;
 	margin-left: calc(50% - 366px);
 	border-radius: 8px;
-	box-shadow: 0px 1px 2px #888;
-	-webkit-box-shadow: 0px 1px 2px #888;
+	box-shadow: 0px 1px 2px #234214;
+	-webkit-box-shadow: 0px 1px 2px #234214;
 	background-color: #fff;
 	margin: 20px auto;
 	padding: 12px;
 	line-height: 20px;
+	text-align: center;
+}
+.payoffButton {
+	width: 400px;
+	height: 36px;
+	padding: 0;
+	border: none;
+	border-radius: 5px;
+	background: #A6CE95;
+	margin-top: 12px;
+}
+.sortExpl {
+	margin-top: 6px;
+	font-size: 12px;
 }
 .logoutButton {
+	margin-top: 6px;
 	position: relative;
 	top: 12px;
 	left: 656px;

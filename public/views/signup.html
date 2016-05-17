@@ -26,7 +26,7 @@
                         <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="newUser.email">
                     </div>
                     <div class="formInputHolder">
-                        <input class="formItemInput" type="password" name="password" placeholder="Password:" ng-model="newUser.password">
+                        <input class="formItemInput" type="password" name="password" placeholder="Password:" ng-model="newUser.password" ng-keyup="$event.keyCode === 13 && signup(newUser)>
                     </div>
                     <div class="formInputHolder">
                         <button class="loginButton" type="submit" name="getStarted" ng-click="signup(newUser)">Now lets look at your debts</button>
