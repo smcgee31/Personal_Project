@@ -1,4 +1,7 @@
 <div class="debtsBox">
+    <div class="logoutButton">
+        <span ng-click="logout()">Log Out</span>
+    </div>
     <div class="topTitle">
         <h1>Enter Your Debts</h1>
     </div>
@@ -22,16 +25,17 @@
     </div><!-- inputDebtsContainer -->
 
     <div class="totalBase">
-        Your total monthly requirement is {{totalBase | currency}}
+        <p>MonthlyRequirement </p>
+        <p class="totalBaseAmt">{{totalBase | currency}}</p>
+        <p>How much can you commit?</p> <input type="text" name="monthlyCommit" ng-model="monthlyCommit" ng-keyup="$event.keyCode === 13 && updateUser(monthlyCommit)">
     </div>
 
 
-    <div class="monthlyCommit">
-        <p>Enter the total amount that you are planning on paying towards your monthly debts</p> <input type="text" name="monthlyCommit" placeholder="Monthly Commit..." ng-model="monthlyCommit" ng-keyup="$event.keyCode === 13 && updateUser(monthlyCommit)">
-    </div>
+    <!-- <div class="monthlyCommit">
+    </div> -->
 
-    <div class="waterall">
-        Your first money waterfall will be {{waterfall | currency}}
+    <div class="waterfall">
+        Your first money waterfall will be <span>{{waterfall | currency}}</span>
     </div>
 
 </div><!-- debtsBox -->
@@ -45,13 +49,30 @@
 
 <div class="debtCards" ng-repeat="debt in debts | orderBy : predicate">
     <div class="debtSide">
-        <button class="deleteDebtButton" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button><span>Creditor: </span><span class="dCard_credName">{{debt.name}}</span><span> {{debt.rate}}%</span>
-        <p>Base Pmt: {{debt.base | currency}}</p>
-        <p>Balance: {{debt.balance | currency}}</p>
+        <button class="deleteDebtButton" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button>
+        <table class="debtsTable">
+            <tr>
+                <th class="dCard_RPB_Hcol1">Creditor:</th>
+                <th class="dCard_RPB_Hcol2">{{debt.name}}</th>
+            </tr>
+            <tr>
+                <td class="dCard_RPB_col1">Int Rate:</td>
+                <td class="dCard_RPB_col2">{{debt.rate}}%</td>
+            </tr>
+            <tr>
+                <td class="dCard_RPB_col1">Base Pmt:</td>
+                <td class="dCard_RPB_col2">{{debt.base | currency}}</td>
+            </tr>
+            <tr>
+                <td class="dCard_RPB_col1">Balance:</td>
+                <td class="dCard_RPB_col2">{{debt.balance | currency}}</td>
+            </tr>
+        </table>
         <!-- <button type="button" ng-click="payBase()" ng-hide="$index === 0">Pay Base Amount</button> -->
         <!-- <button type="button" name="first"  ng-click="payWithWaterfall()" ng-show="$index === 0">Pay Base Plus Waterfall amount</button><br /><br /> -->
     </div>
     <div class="timeSide">
 
     </div>
+    <div class="clearFloat"></div>
 </div>

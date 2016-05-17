@@ -1,20 +1,33 @@
 angular.module('waterfallApp')
 .service('mainSvc', function($http) {
 
+    this.login = function(credentials) {
+        return $http({
+            method: 'POST',
+            url: '/login',
+            data: credentials
+        }).then(function(response) {
+            return response;
+        });
+    };
+
+    this.signup = function(newUser) {
+        return $http({
+            method: 'POST',
+            url: '/signup',
+            data: newUser
+        }).then(function(response) {
+            return response;
+        });
+    };
+
     this.getCurrentUser = function() {
         return $http({
             method: 'GET',
             url: '/me'
         }).then(function(response) {
-            return $http({
-                method: 'POST',
-                url: '/api/user',
-                data: response.data
-            })
-            .then(function(response) {
                 return response;
             });
-        });
     };
 
     this.getUser = function() {
@@ -36,10 +49,10 @@ angular.module('waterfallApp')
         });
     };
 
-    this.addDebt = function(newDebt) {
+    this.addDebt = function(newDebt, id) {
         return $http({
             method: 'POST',
-            url: '/api/waterfall',
+            url: '/api/waterfall/' + id,
             data: newDebt
         }).then(function(response) {
             return response.data;
@@ -55,7 +68,17 @@ angular.module('waterfallApp')
         });
     };
 
-    
+    this.getUserDebts = function(debts) {
+        return $http({
+            method: 'POST', //actually acting as a GET
+            url: '/api/user/waterfall',
+            data: {debts: debts}
+        }).then(function(response) {
+            return response.data;
+        });
+    };
+
+
 
 
 });

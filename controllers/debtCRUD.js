@@ -9,20 +9,13 @@ module.exports = {
             if (err) {
                 res.status(500).json(err);
             } else {
-                User.findOne({facebookId: req.user.id}, function(err, resp){
+                User.findByIdAndUpdate(req.user.id, {$push:{debts: respdebt._id}}, function(err, resp) {
                     if (err) {
                         res.status(500).json(err);
                     } else {
-                    User.findByIdAndUpdate(resp._id, {$push:{debts: respdebt._id}}, function(err, resp) {
-                        if (err) {
-                            res.status(500).json(err);
-                        } else {
-                            res.status(200).json(resp);
-                        }
-                    });
-                }
+                        res.status(200).json(resp);
+                    }
                 });
-
             }
         });
     },
@@ -56,6 +49,17 @@ module.exports = {
             }
         });
     },
+
+    getUserDebts: function(req, res, next) {
+        Debt.find({'_id': {$in: req.body.debts}}).exec(function(err, resp) {
+            if (err) {
+                res.status(500).json(err);
+            } else {
+                res.status(200).json(resp);
+            }
+        });
+    },
+
 
 
 

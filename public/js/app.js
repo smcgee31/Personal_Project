@@ -7,13 +7,14 @@ angular.module('waterfallApp', ['ui.router'])
     .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
-        controller: 'mainCtrl',
+        controller: 'loginCtrl',
         resolve: {
             user: function() {
                 return {};
             }
         }
     })
+
     .state('waterfall', {
         url: '/waterfall',
         templateUrl: 'views/waterfall.html',
@@ -24,11 +25,13 @@ angular.module('waterfallApp', ['ui.router'])
             }
         }
     })
+
     .state('signup', {
         url: '/signup',
         templateUrl: 'views/signup.html',
         controller: 'signupCtrl'
     })
+
     .state('landingPage', {
         url: '/landingPage',
         templateUrl: 'views/landingPage.html',

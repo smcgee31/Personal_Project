@@ -9,13 +9,13 @@
 
         <div class="waterfallCopy">
             <p>
-                Following the Dave Ramsey style of debt freedom we will help you become debt free as soon as you can. Easily create your Money Waterfall and find out just how fast and easy it can be to become DEBT FREE!
+                Following the Dave Ramsey style of debt stacking we will help you become debt free as soon as you can. Easily create your Money Waterfall and find out just how fast and easy it can be to become DEBT FREE!
             </p>
         </div>
 
         <div class="loginFormContainer">
             <div class="formHolder">
-                <form class="userForm" action="/auth/login">
+                <form class="userForm">
                     <div class="formInputHolder">
                         <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="credentials.email">
                     </div>
@@ -23,13 +23,13 @@
                         <span><input class="formItemInput" type="password" name="password" maxlength="9" placeholder="Password:" ng-model="credentials.password"></span>
                     </div>
                     <div class="formInputHolder">
-                        <button type="button" name="login" class="loginButton" ng-click="register(credentials)">Log In</button>
+                        <button type="submit" name="login" class="loginButton" ng-click="login(credentials)">Log In</button>
                     </div>
-                    <div class="formInputHolder">
+                    <!-- <div class="formInputHolder">
                         <a href="/login/facebook">
                             <button class="facebookButton" type="button" name="facebookButton"></button>
                         </a>
-                    </div>
+                    </div> -->
             </div>
 
         </div>

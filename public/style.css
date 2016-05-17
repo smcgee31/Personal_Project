@@ -135,10 +135,13 @@ body {
 	text-decoration: none;
 }
 .facebookButton {
-	width: 200px;
+	width: 330px;
 	height: 40px;
-	background-image: url(/img/LoginFB_large.png);
+	background: url(/img/LoginFB_large.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 	border-radius: 5px;
+	margin-top: 12px;
 }
 .loginFormContainer {
 	width: 100%; /* was 340px*/
@@ -159,7 +162,7 @@ body {
 	padding-top: 20px;
 }*/
 .formInputHolder {
-	padding-top: 20px;
+	padding-top: 12px;
 }
 .formItemInput {
 	width: 330px;
@@ -178,7 +181,6 @@ body {
 	width: 330px;
 	height: 40px;
 	border-radius: 5px;
-	margin-bottom: 12px;
 	font-family: 'Roboto', sans-serif;
 	font-style: normal;
 	font-size: 16px;
@@ -197,7 +199,6 @@ body {
 
 .debtsBox{
 	width: 732px;
-	/*border: 1px solid blue;*/
 	margin-left: calc(50% - 366px);
 	margin-top: 40px;
 	border-radius: 8px;
@@ -213,21 +214,28 @@ body {
 	padding-left: 12px;
 }
 .totalBase {
-	width: 140px;
+	width: 280px;
 	height: 120px;
-	/*border: 1px solid blue;*/
+	text-align: center;
 	display: inline-block;
 	vertical-align: top;
 	margin-bottom: 20px;
+	text-align: center;
 }
-	.inputDebtsInstr p {
-		margin-top: 20px;
-		font-size: 14px;
+	.totalBase p {
+		padding-top: 10px;
+	}
+	.totalBase input {
+		text-align: center;
+		border-radius: 3px;
+		margin: 10px;
+	}
+	.totalBaseAmt {
+		color: red;
 	}
 .inputDebtsContainer {
 	width: 440px;
 	height: 120px;
-	/*border: 1px solid blue;*/
 	display: inline-block;
 	vertical-align: top;
 }
@@ -237,7 +245,6 @@ body {
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: flex-start;
-		/*border: 1px solid blue;*/
     	margin-top: 12px;
 	}
 		.input {
@@ -253,42 +260,85 @@ body {
     			font-size: 16px;
 			}
 
-.monthlyCommit {
-	width: 140px;
-	height: 120px;
-	display: inline-block;
-	/*border: 1px solid blue;*/
-	vertical-align: top;
+.waterfall {
+	font-size: 16px;
+	text-align: center;
+	line-height: 20px;
+	padding-bottom: 12px;
 }
-.monthlyCommit input {
-	width: 136px;
+.waterfall span {
+	color: green;
+	font-weight: bold;
 }
 .deleteDebtButton {
+	position: relative;
+	top: 20px;
+	left: 18px;
 	width: 20px;
 	height: 20px;
 	/*color: whitesmoke;*/
 	font-size: 15px;
 	background: #fff;
 	border: none;
-	margin-right: 4px;
+	/*margin-right: 4px;
+	margin-left: 4%;
+    margin-top: 12px;*/
 }
 .debtCards {
 	width: 732px;
+	/*height: 100px;*/
 	margin-left: calc(50% - 366px);
-	border-radius: 8px;
-	box-shadow: 0px 1px 2px #888;
-	-webkit-box-shadow: 0px 1px 2px #888;
-	background-color: #fff;
+	/*border-radius: 8px;*/
+	/*box-shadow: 0px 1px 2px #888;*/
+	/*-webkit-box-shadow: 0px 1px 2px #888;*/
+	/*background-color: #fff;*/
 	margin: 20px auto;
-	padding: 12px;
 	line-height: 20px;
 }
 .debtCards p {
-	margin: 2px auto;
+	margin: 4px auto;
 }
-.dCard_credName {
+.debtSide {
+	width: 49.9%;
+	height: 120px;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	box-shadow: 0px 1px 2px #888;
+	-webkit-box-shadow: 0px 1px 2px #888;
+	background-color: #fff;
+	float: left;
+}
+.timeSide {
+	width: 49.9%;
+	height: 120px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	box-shadow: 0px 1px 2px #888;
+	-webkit-box-shadow: 0px 1px 2px #888;
+	background-color: #fff;
+	float: right;;
+}
+/*.dCard_credName {
 	font-weight: bold;
 	margin: 0 2px;
+}*/
+.debtsTable {
+	margin: 0 auto;
+}
+.dCard_RPB_Hcol1 {
+	text-align: left;
+	width: 80px;
+}
+.dCard_RPB_Hcol2 {
+	text-align: right;
+	font-weight: bold;
+	width: 190px;
+}
+.dCard_RPB_col1 {
+	text-align: left;
+}
+.dCard_RPB_col2 {
+	text-align: right;
 }
 .payoffButtonsContainer {
 	width: 732px;
@@ -300,9 +350,17 @@ body {
 	margin: 20px auto;
 	padding: 12px;
 	line-height: 20px;
-
 }
-
+.logoutButton {
+	position: relative;
+	top: 12px;
+	left: 656px;
+	font-size: 16px;
+	color: #DA751D;
+}
+.logoutButton:hover {
+	cursor: pointer;
+}
 
 
 

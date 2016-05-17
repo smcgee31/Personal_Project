@@ -9,29 +9,28 @@
 
         <div class="waterfallCopy">
             <p>
-                Following the Dave Ramsey style of debt freedom we will help you become debt free as soon as you can. Easily create your Money Waterfall and find out just how fast and easy it can be to become DEBT FREE!
+                Following the Dave Ramsey style of debt stacking we will help you become debt free as soon as you can. Easily create your Money Waterfall and find out just how fast and easy it can be to become DEBT FREE!
             </p>
         </div>
 
         <div class="loginFormContainer">
             <div class="formHolder">
-                <form class="userForm" action="/auth/login">
+                <form class="userForm">
                     <div class="formInputHolder">
-                        <input class="formItemInput" type="text" name="fName" placeholder="First name:" ng-model="user.fName">
+                        <input class="formItemInput" type="text" name="fName" placeholder="First name:" ng-model="newUser.fName">
                     </div>
                     <div class="formInputHolder">
-                        <input class="formItemInput" type="text" name="lName" placeholder="Last name:" ng-model="user.lName">
+                        <input class="formItemInput" type="text" name="lName" placeholder="Last name:" ng-model="newUser.lName">
                     </div>
                     <div class="formInputHolder">
-                        <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="user.email">
+                        <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="newUser.email">
                     </div>
                     <div class="formInputHolder">
-                        <input class="formItemInput" type="password" name="password" placeholder="Password:" ng-model="user.password">
+                        <input class="formItemInput" type="password" name="password" placeholder="Password:" ng-model="newUser.password">
                     </div>
-
-                    <a ui-sref="/waterfall">
-                        <button class="loginButton" type="button" name="getStarted" ng-click="newUser(user) ">Now lets look at your debts</button>
-                    </a>
+                    <div class="formInputHolder">
+                        <button class="loginButton" type="submit" name="getStarted" ng-click="signup(newUser)">Now lets look at your debts</button>
+                    </div>
                 </form>
             </div>
         </div>

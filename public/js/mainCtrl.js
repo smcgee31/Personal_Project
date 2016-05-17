@@ -2,14 +2,9 @@ angular.module('waterfallApp')
 .controller('mainCtrl', function($scope, mainSvc, $state, user) {
 
     $scope.user = user.data;
-    console.log(user.data);
     $scope.debts = user.data.debts;
 
     $scope.predicate = '+balance';
-    // $scope.order = function(predicate) {
-    //     // $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
-    //     $scope.predicate = predicate;
-    // };
 
     $scope.commit = function(monthlyCommit) {
         $scope.waterfall = monthlyCommit - $scope.totalBase;
@@ -18,7 +13,7 @@ angular.module('waterfallApp')
 
     $scope.getBaseTotal = function() {
         var totalBaseArr = [];
-        var debts = $scope.user.debts;
+        var debts = $scope.debts;
         for (var i = 0; i < debts.length; i++) {
             totalBaseArr.push(debts[i].base);
         }
@@ -26,21 +21,32 @@ angular.module('waterfallApp')
         if ($scope.user.monthlyCommit) {
             $scope.commit($scope.user.monthlyCommit);
         }
-    };$scope.getBaseTotal();
+    };
+    $scope.getBaseTotal();
 
     $scope.refreshUser = function() {
         mainSvc.getCurrentUser()
         .then(function(response) {
             $scope.user = response.data;
             $scope.debts = response.data.debts;
-            $scope.getBaseTotal();
+            $scope.getUserDebts($scope.debts);
         });
     };
 
+    $scope.getUserDebts = function(debts) {
+        mainSvc.getUserDebts(debts)
+        .then(function(response) {
+            $scope.debts = response;
+            $scope.getBaseTotal();
+        });
+
+    };
+
+    $scope.getUserDebts($scope.user.debts);
     $scope.newDebt = {};
 
     $scope.addDebt = function(newDebt) {
-        mainSvc.addDebt(newDebt)
+        mainSvc.addDebt(newDebt, $scope.user._id)
         .then(function(response) {
             $scope.newDebt = {};
             $scope.refreshUser();

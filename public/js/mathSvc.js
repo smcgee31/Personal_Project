@@ -34,7 +34,6 @@ angular.module('waterfallApp')
         debts = sortDebts(debts, 'balance');
         // while loop until the debts array is empty
         while (debts.length > 0) {
-            console.log(debts);
             // loop through the array of debts and perform the calc() based on first debt or otherwise
             for (var i = 0; i < debts.length; i++) {
                 // if it is the first one on the array then use the calc() that adds the waterfall amt
@@ -59,7 +58,6 @@ angular.module('waterfallApp')
                 }
             }
         }
-        console.log(newDebtsArray);
         return newDebtsArray;
     }
 
