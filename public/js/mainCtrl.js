@@ -3,6 +3,7 @@ angular.module('waterfallApp')
 
     $scope.user = user.data;
     $scope.debts = user.data.debts;
+    console.log($scope.debts);
 
     $scope.predicate = '+balance';
 
@@ -82,8 +83,13 @@ angular.module('waterfallApp')
             $scope.sorter='-rate';
         }
         $scope.refreshUser();
-        $scope.newDebts = mathSvc.payTheBills(waterfall, debts, type);
-        console.log($scope.newDebts);
+        $scope.newDebts = function(waterfall, debts, type) {
+            mathSvc.payTheBills(waterfall, debts, type)
+            .then(function(response) {
+                $scope.newDebts = response.data;
+                console.log($scope.newDebts.data);
+            });
+        };
 
         // .then(function(response) {
         //     // var newDebtsArray = response;
