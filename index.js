@@ -7,7 +7,6 @@ var debtCRUD = require('./controllers/debtCRUD.js');
 var userCRUD = require('./controllers/userCRUD.js');
 var User = require('./controllers/UserCtrl.js');
 var FacebookStrategy = require('passport-facebook').Strategy;
-// ^^ capitalized because it is a constructor
 var keys = require('./keys.js');
 var passport = require('./services/passport.js');
 var moment = require('moment');

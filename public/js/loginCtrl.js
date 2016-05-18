@@ -4,7 +4,7 @@ angular.module('waterfallApp')
     $scope.login = function(credentials) {
         mainSvc.login(credentials)
         .then(function(response) {
-          $state.go('waterfall');
+            $state.go('waterfall');
         });
     };
 

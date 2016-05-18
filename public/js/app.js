@@ -1,4 +1,4 @@
-angular.module('waterfallApp', ['ui.router'])
+angular.module('waterfallApp', ['ui.router', 'ngAnimate'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
