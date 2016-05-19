@@ -4,6 +4,13 @@ angular.module('waterfallApp', ['ui.router', 'ngAnimate'])
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
+
+    .state('home', {
+        url: '/',
+        templateUrl: 'views/home.html',
+        controller: 'homeCtrl'
+    })
+
     .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
@@ -30,18 +37,20 @@ angular.module('waterfallApp', ['ui.router', 'ngAnimate'])
         url: '/signup',
         templateUrl: 'views/signup.html',
         controller: 'signupCtrl'
-    })
-
-    .state('landingPage', {
-        url: '/landingPage',
-        templateUrl: 'views/landingPage.html',
-        controller: 'landingCtrl',
-        resolve: {
-            user: function() {
-                return {};
-            }
-        }
     });
+
+
+
+    // .state('landingPage', {
+    //     url: '/landingPage',
+    //     templateUrl: 'views/landingPage.html',
+    //     controller: 'landingCtrl',
+    //     resolve: {
+    //         user: function() {
+    //             return {};
+    //         }
+    //     }
+    // });
 
 
 

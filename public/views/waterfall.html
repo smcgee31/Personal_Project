@@ -55,7 +55,7 @@
     <span>Currently sorted by: {{sorter}}</span>
 </div>
 
-<div class="debtCards fade"  ng-animate=" 'animate' ">
+<div class="debtCards">
 
     <div class="debtCars_full" ng-repeat="debt in debts | orderBy : sorter" ng-if="beforePayments">
         <button class="deleteDebtButton_before" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button>
@@ -80,7 +80,7 @@
     </div>
 
     <div class="debtCards_debtSide_container" ng-if="beforePayments2">
-        <div class="debtCards_debtSide" ng-repeat="debt in debts | orderBy : sorter">
+        <div class="debtCards_debtSide fade" ng-repeat="debt in debts | orderBy : sorter">
             <button class="deleteDebtButton_after" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button>
             <table class="debtsTable">
                 <tr>
@@ -104,7 +104,7 @@
     </div>
     <div class="debtCards_timeSide_container" ng-if="beforePayments2">
 
-        <div class="debtCards_timeSide" ng-repeat="newDebt in newDebts">
+        <div class="debtCards_timeSide fade" ng-repeat="newDebt in newDebts">
             <p>
                 Paid-Off Date:
             </p>
