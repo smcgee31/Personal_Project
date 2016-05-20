@@ -22,7 +22,8 @@
             </div>
         </div>
 
-    </div><!-- inputDebtsContainer -->
+    </div>
+    <!-- inputDebtsContainer -->
 
     <div class="totalBase">
         <p>MonthlyRequirement </p>
@@ -35,7 +36,8 @@
         Your first money waterfall will be <span>{{waterfall | currency}}</span>
     </div>
 
-</div><!-- debtsBox -->
+</div>
+<!-- debtsBox -->
 
 <div class="payoffButtonsContainer">
     <p>
@@ -44,12 +46,13 @@
     </p>
     <span class="sortExpl">Recommended because the faster results will help you stick with it!</span>
     <p>
-        <button class="payoffButton" type="button" ng-click="payTheBills(waterfall, debts, 'rate'); showFinalIdeas(); hideBeforePayments(); hideBeforePayments2()">Sort and pay debts by highest interest rate first</button>
+        <button class="payoffButton" type="button" ng-click="payTheBills(waterfall, debts, 'rate'); showFinalIdeas(); hideBeforePayments()">Sort and pay debts by highest interest rate first</button>
         <!-- <span ng-show="sorter === '-rate'"></span> -->
     </p>
     <span class="sortExpl">This method might save some interest in the long run</span>
 
-</div><!-- payoffButtonsContainer -->
+</div>
+<!-- payoffButtonsContainer -->
 
 <div class="sortMessage">
     <span>Currently sorted by: {{sorter}}</span>
@@ -57,7 +60,7 @@
 
 <div class="debtCards">
 
-    <div class="debtCars_full" ng-repeat="debt in debts | orderBy : sorter" ng-if="beforePayments">
+    <div class="debtCars_full fade" ng-repeat="debt in debts | orderBy : sorter" ng-if="beforePayments">
         <button class="deleteDebtButton_before" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button>
         <table class="debtsTable">
             <tr>
@@ -78,46 +81,48 @@
             </tr>
         </table>
     </div>
+    <div ng-repeat="debt in newDebts | orderBy : sorter">
+        <div class="debtCards_debtSide_container fade" ng-if="!beforePayments">
+            <div class="debtCards_debtSide">
+                <button class="deleteDebtButton_after" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button>
+                <table class="debtsTable">
+                    <tr>
+                        <th class="dCard_RPB_Hcol1">Creditor:</th>
+                        <th class="dCard_RPB_Hcol2">{{debt.name}}</th>
+                    </tr>
+                    <tr>
+                        <td class="dCard_RPB_col1">Int Rate:</td>
+                        <td class="dCard_RPB_col2">{{debt.rate}}%</td>
+                    </tr>
+                    <tr>
+                        <td class="dCard_RPB_col1">Base Pmt:</td>
+                        <td class="dCard_RPB_col2">{{debt.base | currency}}</td>
+                    </tr>
+                    <tr>
+                        <td class="dCard_RPB_col1">Balance:</td>
+                        <td class="dCard_RPB_col2">{{debt.balance | currency}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="debtCards_timeSide_container" ng-if="!beforePayments">
 
-    <div class="debtCards_debtSide_container" ng-if="beforePayments2">
-        <div class="debtCards_debtSide fade" ng-repeat="debt in debts | orderBy : sorter">
-            <button class="deleteDebtButton_after" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button>
-            <table class="debtsTable">
-                <tr>
-                    <th class="dCard_RPB_Hcol1">Creditor:</th>
-                    <th class="dCard_RPB_Hcol2">{{debt.name}}</th>
-                </tr>
-                <tr>
-                    <td class="dCard_RPB_col1">Int Rate:</td>
-                    <td class="dCard_RPB_col2">{{debt.rate}}%</td>
-                </tr>
-                <tr>
-                    <td class="dCard_RPB_col1">Base Pmt:</td>
-                    <td class="dCard_RPB_col2">{{debt.base | currency}}</td>
-                </tr>
-                <tr>
-                    <td class="dCard_RPB_col1">Balance:</td>
-                    <td class="dCard_RPB_col2">{{debt.balance | currency}}</td>
-                </tr>
-            </table>
+            <div class="debtCards_timeSide">
+                <p>
+                    Paid-Off Date:
+                </p>
+                <p>
+                    {{debt.months | date: 'MMM yyyy'}}
+                </p>
+            </div>
         </div>
     </div>
-    <div class="debtCards_timeSide_container" ng-if="beforePayments2">
-
-        <div class="debtCards_timeSide fade" ng-repeat="newDebt in newDebts">
-            <p>
-                Paid-Off Date:
-            </p>
-            <p>
-                {{newDebt.months}} months
-            </p>
-        </div>
-    </div>
-</div><!-- debtCards -->
+</div>
+<!-- debtCards -->
 
 <div class="clearFloat"></div>
 <div class="finalIdeas" ng-show="finalIdeas">
-    <h3>You could be debt FREE in {{newDebts[newDebts.length -1].months}} months and have {{moneyCommitted | currency}} in disposable income!</h3>
+    <h3>You could be debt FREE by {{newDebts[newDebts.length -1].months | date: 'MMM yyyy'}} and have {{moneyCommitted | currency}} in disposable income!</h3>
     <p class="life">What would your life look like then?</p>
     <div class="addMore">
         Try adding more to the amount that you can put toward your monthly bills and see how quicker it could be.

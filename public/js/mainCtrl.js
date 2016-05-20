@@ -14,10 +14,10 @@ angular.module('waterfallApp')
             $scope.beforePayments = false;
         };
 
-        $scope.beforePayments2 = false;
-        $scope.hideBeforePayments2 = function() {
-            $scope.beforePayments2 = true;
-        };
+        // $scope.beforePayments2 = false;
+        // $scope.hideBeforePayments2 = function() {
+        //     $scope.beforePayments2 = true;
+        // };
 
 
         $scope.predicate = '+balance';
@@ -92,7 +92,7 @@ angular.module('waterfallApp')
         $scope.logout = function() {
             mainSvc.logout()
                 .then(function(response) {
-                    $state.go('login');
+                    $state.go('home');
                 });
         };
 

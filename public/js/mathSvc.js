@@ -63,7 +63,7 @@ angular.module('waterfallApp')
                 for (var k = 0; k < debts.length; k++) {
                     if (debts[k].newBalance <= 0) {
                         // if it has been paid off then assign the months counter into the debts array
-                        debts[k].months = months;
+                        debts[k].months = new Date(moment().add(months, 'months'));
                         // when a debt gets paid off then the waterfall must increase by the
                         // amount of the base of that debt
                         waterfall = waterfall + debts[k].base;

@@ -28,7 +28,7 @@ body {
 
 #headerWrapper {
 	background: #A6CE95;
-	padding: 18px;
+	/*padding: 18px;*/
 }
 .headerContainer {
 	width: 100%;
@@ -48,6 +48,7 @@ body {
 .navLinksContainer {
 	width: 50%;
 	float: right;
+	height: 80px;
 }
 	.navLinks ul {
 	    list-style-type: none;
@@ -57,19 +58,21 @@ body {
 	    background-color: #A6CE95;
 	}
 		.navLinks li {
+			width: 120px;
 			margin-right: 20px;
 			display: inline;
 			float: right;
 			color: whitesmoke;
 			text-shadow: 2px 2px #000;
+			line-height: 80px;
 		}
 			.navLinks li a {
 			    display: block;
 			    color: white;
 			    text-align: center;
-			    padding: 14px 16px;
+			    /*padding: 0 16px;*/
 			    text-decoration: none;
-				border-radius: 5px;
+				/*border-radius: 5px;*/
 
 			}
 
@@ -89,7 +92,7 @@ body {
 
 
 #contentWrapper {
-	padding-bottom: 200px; /* Height of the footer element */
+	/*padding-bottom: 160px; /* Height of the footer element */*/
 }
 
 
@@ -104,10 +107,11 @@ body {
 
 .heroContainer {
 	width: 100%;
-	margin-bottom: -100px;
 }
 	.hero {
+		position: absolute;
 		width: 100%;
+		top: 80px;
 	}
 		.hero img {
 			width: 100%;
@@ -115,10 +119,11 @@ body {
 			clip-path: polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0 0);
 		}
 	.smartMoney {
-		position: relative;
-		top: -350px;
+		position: absolute;;
+		top: 16vw;
 		width: 100%;
 		text-align: center;
+		z-index: 1;
 	}
 		.smartMoney p {
 			font-size: 22px;
@@ -137,9 +142,11 @@ body {
 		}
 .publicGraphsContainer {
 	width: 100%;
-	height: 400px;
+	max-width: 1300px;
 	padding: 24px;
 	text-align: center;
+	margin: 0 auto;
+	padding: 40vw 0 20px 0;
 }
 	.publicGraphsTitle {
 		font-size: 30px;
@@ -172,9 +179,34 @@ body {
 		font-size: 12px;
 		color: #909090;
 	}
-
-
-
+.heroContainer2 {
+	width: 100%;
+}
+.hero2 {
+	width: 100%;
+}
+.hero2 img {
+	width: 100%;
+}
+.lifeBalanceCopy {
+	position: relative;
+	left: 5vw;
+	bottom: 42vw;
+	width: 30vw;
+	max-width: 600px;
+	min-width: 200px;
+	background: rgba(0, 0, 0, .5);
+	color: whitesmoke;
+	padding: 18px;
+}
+.lifeBalanceCopy h2 {
+	font-size: 40px;
+	margin-bottom: 18px;
+}
+.lifeBalanceCopy p {
+	font-size: 28px;
+	line-height:
+}
 
 
 
@@ -197,7 +229,6 @@ body {
 	-o-filter: blur(5px);
 	-ms-filter: blur(5px);
 	filter: blur(5px);
-	/*z-index: -1;*/
 }
 	.waterfallBackground img {
 		position: absolute;
@@ -267,7 +298,7 @@ body {
 .loginFormContainer {
 	width: 100%; /* was 340px*/
     height: 360px;
-    margin: 0px auto;
+    margin: 0 auto;
     /*padding: 30px 0;*/
 	text-align: center;
 }
@@ -337,7 +368,7 @@ body {
 
 .debtsBox{
 	width: 732px;
-	margin-left: calc(50% - 366px);
+	margin: 0 auto;
 	margin-top: 40px;
 	border-radius: 8px;
 	box-shadow: 0px 1px 2px #234214;
@@ -409,7 +440,7 @@ body {
 }
 .payoffButtonsContainer {
 	width: 732px;
-	margin-left: calc(50% - 366px);
+	margin: 0 auto;
 	border-radius: 8px;
 	box-shadow: 0px 1px 2px #234214;
 	-webkit-box-shadow: 0px 1px 2px #234214;
@@ -470,7 +501,7 @@ body {
 .debtCards {
 	width: 732px;
 	/*height: 100px;*/
-	margin-left: calc(50% - 366px);
+	margin: 0 auto;
 	/*border-radius: 8px;*/
 	/*box-shadow: 0px 1px 2px #234214;*/
 	/*-webkit-box-shadow: 0px 1px 2px #234214;*/
@@ -506,13 +537,13 @@ body {
 }
 .fade {
   transition: .5s linear all;
-  -webkit-transition: .25s linear all;
+  -webkit-transition: .5s linear all;
 }
 .fade.ng-enter {
-  animation: 1s appear;
+  animation: .5s appear;
 }
 .fade.ng-leave {
-  animation: .01s disappear;
+  animation: .5s disappear;
 }
 
 .debtCards_debtSide_container {
