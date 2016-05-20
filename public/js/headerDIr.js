@@ -6,7 +6,4 @@ angular.module('waterfallApp')
         restrict: 'AE',
     };
 
-
-
-
 });
