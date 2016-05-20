@@ -9,6 +9,8 @@ var User = require('./controllers/UserCtrl.js');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var keys = require('./keys.js');
 var passport = require('./services/passport.js');
+var serverConfig = require('./server_config.js');
+var port = serverConfig.serverPort;
 var moment = require('moment');
 moment().format();
 
@@ -101,9 +103,8 @@ app.get('/api/waterfall', debtCRUD.getDebts);
 app.put('/api/waterfall', debtCRUD.payDebt);
 
 
-var port = 3030;
 app.listen(port, function() {
     console.log('--------------------');
-    console.log('PARTY ON PORT', port);
+    console.log('Listening on ', port);
     console.log('--------------------');
 });
