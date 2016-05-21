@@ -15,6 +15,9 @@ angular.module('waterfallApp', ['ui.router', 'ngAnimate'])
         url: '/login',
         templateUrl: 'views/login.html',
         controller: 'loginCtrl',
+        params: {
+            signupMessage: null
+        },
         resolve: {
             user: function() {
                 return {};

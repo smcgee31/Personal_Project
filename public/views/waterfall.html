@@ -39,9 +39,9 @@
 </div>
 <!-- debtsBox -->
 
-<div class="payoffButtonsContainer">
+<div class="payoffButtonsContainer fade" ng-show="waterfall">
     <p>
-        <button class="payoffButton" type="button" ng-click="payTheBills(waterfall, debts, 'balance'); showFinalIdeas(); hideBeforePayments(); hideBeforePayments2()">Sort and pay debts by smallest balance first</button>
+        <button class="payoffButton" type="button" ng-click="payTheBills(waterfall, debts, 'balance'); showFinalIdeas(); hideBeforePayments()">Sort and pay debts by smallest balance first</button>
         <!-- <span ng-show="sorter === '+balance'"></span> -->
     </p>
     <span class="sortExpl">Recommended because the faster results will help you stick with it!</span>
@@ -54,7 +54,7 @@
 </div>
 <!-- payoffButtonsContainer -->
 
-<div class="sortMessage">
+<div class="sortMessage fade" ng-show="waterfall">
     <span>Currently sorted by: {{sorter}}</span>
 </div>
 

@@ -20,7 +20,7 @@ angular.module('waterfallApp')
         // };
 
 
-        $scope.predicate = '+balance';
+        $scope.predicate = '';
 
         $scope.commit = function(monthlyCommit) {
             $scope.waterfall = monthlyCommit - $scope.totalBase;

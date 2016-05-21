@@ -20,9 +20,14 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9BCB52', endColorstr='#DA751D',GradientType=0 ); */
 
 }
-/*#mainWrapper {
+#mainWrapper {
 	min-height: 100%;
-	position: relative;
+	/*position: relative;*/
+	/*margin-bottom: 200px;*/
+}
+/*#mainWrapper:after {
+	content: "";
+	display: block;
 }*/
 
 
@@ -92,7 +97,7 @@ body {
 
 
 /*#contentWrapper {
-	/*padding-bottom: 160px; /* Height of the footer element */*/
+	padding-bottom: 160px; /* Height of the footer element */
 }*/
 
 
@@ -204,7 +209,7 @@ body {
 	margin-bottom: 1.75vw;
 }
 .lifeBalanceCopy p {
-	font-size: 2.5vw;
+	font-size: 2.25vw;
 	line-height: 3vw;
 }
 
@@ -499,6 +504,7 @@ body {
 	color: red;
 	font-size: 12px;
 	text-align: center;
+	margin-top: 20px;
 }
 .debtCards {
 	width: 732px;
@@ -648,13 +654,15 @@ body {
 
 
 
-
+#footerWrapper, #mainWrapper:after {
+	height: 200px
+}
 
 
 #footerWrapper {
 	background: #234214;
 	width: 100%;
-	height: 100%;
+	/*height: 200px;*/
 	padding-top: 20px;
 	margin-top: -2px;
 	/*position: absolute;
@@ -676,7 +684,7 @@ body {
 	color: whitesmoke;
 }
 .socialIconsContainer {
-	width: 60vw;
+	width: 47vw;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-around;
