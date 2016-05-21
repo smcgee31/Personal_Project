@@ -297,7 +297,7 @@ body {
 }*/
 .loginFormContainer {
 	width: 100%; /* was 340px*/
-    height: 360px;
+    /*height: 360px;*/
     margin: 0 auto;
     /*padding: 30px 0;*/
 	text-align: center;
@@ -374,6 +374,7 @@ body {
 	box-shadow: 0px 1px 2px #234214;
 	-webkit-box-shadow: 0px 1px 2px #234214;
 	background-color: #fff;
+	padding: 22px;
 }
 .topTitle {
 	font-size: 30px;
@@ -382,12 +383,13 @@ body {
 	padding-bottom: 20px;
 }
 .totalBase {
-	width: 280px;
+	width: 212px;
 	height: 120px;
 	text-align: center;
 	display: inline-block;
 	vertical-align: top;
 	margin-bottom: 20px;
+	margin-left: 15px;
 	text-align: center;
 }
 	.totalBase p {
@@ -605,8 +607,8 @@ body {
     height: 40px;
     padding: 12px;
     position: relative;
-    top: 0px;
-    left: 642px;
+    top: -21px;
+    left: 620px;
     font-size: 16px;
     color: #DA751D;
     border-top-right-radius: 8px;

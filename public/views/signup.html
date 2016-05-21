@@ -5,26 +5,26 @@
 <div class="waterfallLanding">
     <p>Money Waterfall</p>
 
-    <div class="waterfallCopy">
+    <!-- <div class="waterfallCopy">
         <p>
             Following the Dave Ramsey style of debt stacking we will help you become debt free as soon as you can. Easily create your Money Waterfall and find out just how fast and easy it can be to become DEBT FREE!
         </p>
-    </div>
+    </div> -->
 
     <div class="loginFormContainer">
         <div class="formHolder">
-            <form class="userForm">
+            <form class="userForm" name="signupForm">
                 <div class="formInputHolder">
-                    <input class="formItemInput" type="text" name="fName" placeholder="First name:" ng-model="newUser.fName">
+                    <input class="formItemInput" type="text" name="fName" placeholder="First name:" ng-model="newUser.fName" autofocus required>
                 </div>
                 <div class="formInputHolder">
-                    <input class="formItemInput" type="text" name="lName" placeholder="Last name:" ng-model="newUser.lName">
+                    <input class="formItemInput" type="text" name="lName" placeholder="Last name:" ng-model="newUser.lName" required>
                 </div>
                 <div class="formInputHolder">
-                    <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="newUser.email">
+                    <input class="formItemInput" type="email" name="emailaddress" placeholder="Email:" ng-model="newUser.email" required>
                 </div>
                 <div class="formInputHolder">
-                    <input class="formItemInput" type="password" name="password" placeholder="Password:" ng-model="newUser.password" ng-keyup="$event.keyCode === 13 && signup(newUser)">
+                    <input class="formItemInput" type="password" name="password" placeholder="Password:" ng-model="newUser.password" ng-keyup="$event.keyCode === 13 && signup(newUser)" required>
                 </div>
                 <div class="formInputHolder">
                     <button class="loginButton" type="submit" name="getStarted" ng-click="signup(newUser)">Now lets look at your debts</button>

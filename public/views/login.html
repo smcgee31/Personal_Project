@@ -5,20 +5,20 @@
 <div class="waterfallLanding">
     <p>Money Waterfall</p>
 
-    <div class="waterfallCopy">
+    <!-- <div class="waterfallCopy">
         <p>
             Following the Dave Ramsey style of debt stacking we will help you become debt free as soon as you can. Easily create your Money Waterfall and find out just how fast and easy it can be to become DEBT FREE!
         </p>
-    </div>
+    </div> -->
 
     <div class="loginFormContainer">
         <div class="formHolder">
-            <form class="userForm">
+            <form class="userForm" name="loginForm">
                 <div class="formInputHolder">
-                    <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="credentials.email">
+                    <input class="formItemInput" type="text" name="email" placeholder="Email:" ng-model="credentials.email" autofocus required>
                 </div>
                 <div class="formInputHolder">
-                    <span><input class="formItemInput" type="password" name="password" maxlength="9" placeholder="Password:" ng-model="credentials.password" ng-keyup="$event.keyCode === 13 && login(credentials)"></span>
+                    <span><input class="formItemInput" type="password" name="password" maxlength="9" placeholder="Password:" ng-model="credentials.password" ng-keyup="$event.keyCode === 13 && login(credentials)" required></span>
                 </div>
                 <div class="formInputHolder">
                     <button type="submit" name="login" class="loginButton" ng-click="login(credentials)">Log In</button>
