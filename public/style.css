@@ -64,7 +64,6 @@ body {
 				/*border-radius: 5px;*/
 
 			}
-
 			.navLinks li a:hover {
 			    background-color: #5C7E26;
 				-webkit-transition: 0.15s ease-in-out;
@@ -76,7 +75,6 @@ body {
 .clearFloat {
 	clear: both;
 }
-
 
 
 
@@ -123,7 +121,6 @@ body {
 			margin: 12px;
 			text-shadow: 2px 2px 1px #000;
 		}
-
 .publicGraphsContainer {
 	width: 100%;
 	max-width: 1300px;
@@ -141,7 +138,6 @@ body {
 		width: 80%;
 		margin: 20px auto;
 		display: flex;
-
 	}
 		.stat {
 			width: 33%;
@@ -244,15 +240,6 @@ body {
 		color: #35794B;
 		text-shadow: 2px 2px 1px #3a4726;
 	}
-.waterfallCopy {
-	margin: 20px 20px 10px 20px;
-	font-family: 'Open Sans', sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 22px;
-	text-align: justify;
-}
 .buttonsArea {
 	width: 100%;
 	text-align: center;
@@ -263,7 +250,6 @@ body {
 	height: 40px;
 	border-radius: 5px;
 	margin-bottom: 12px;
-	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-size: 16px;
 	color: white;
@@ -295,7 +281,7 @@ body {
 	background-color: #fff;
 	border: 2px solid #D1D3D4;
 	border-radius: 5px;
-	font-family: 'Open Sans Condensed', sans-serif;
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
 	font-style: normal;
 	font-size: 16px;
 	padding-left: 12px;
@@ -305,7 +291,6 @@ body {
 	width: 330px;
 	height: 45px;
 	border-radius: 5px;
-	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-size: 16px;
 	color: white;
@@ -314,7 +299,6 @@ body {
 .loginButton:hover {
 	background: #B56117
 }
-
 .forgotPassword {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 12px;
@@ -339,6 +323,8 @@ body {
 
 
 
+
+/*--- WATERFALL PAGE ---*/
 
 
 .debtsBox{
@@ -562,7 +548,6 @@ body {
 	text-align: center;
 }
 .debtCards_timeSide p {
-
 }
 .logoutButton {
     width: 90px;
@@ -610,28 +595,31 @@ body {
 
 
 
+
+
+
+
+
+/*--- FOOTER ---*/
+
+
 #footerWrapper, #mainWrapper::after {
 	height: 200px
 }
-
-
 #footerWrapper {
 	background: #234214;
 	width: 100%;
-	/*height: 200px;*/
 	padding-top: 20px;
 	margin-top: -2px;
-	/*position: absolute;
-	bottom: 0;
-	left: 0;*/
 }
 .disclaimer {
-	width: 732px;
-	max-width: 75%;
+	max-width: 772px;
+	/*max-width: 75%;*/
 	margin: 12px auto;
 	font-size: 10px;
 	text-align: justify;
 	color: whitesmoke;
+	padding: 0 20px 0 20px;
 }
 .copyright {
 	text-align: center;
@@ -640,11 +628,12 @@ body {
 	color: whitesmoke;
 }
 .socialIconsContainer {
-	width: 56vw;
+	max-width: 772px;
+	/*width: 56vw;*/
 	margin: 0 auto;
 	display: flex;
-	justify-content: space-around;
-	padding: 20px 0 20px 0;
+	justify-content: space-between;
+	padding: 20px;
 }
 .socialIcons a {
 	color: #E0EFDD;
