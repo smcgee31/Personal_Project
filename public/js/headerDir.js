@@ -5,7 +5,7 @@ angular.module('waterfallApp')
         templateUrl: 'views/header.html',
         restrict: 'AE',
         controller: function($scope, $location, mainSvc) {
-            
+
             $scope.location = $location;
 
             $scope.logout = function() {
