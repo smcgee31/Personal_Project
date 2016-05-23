@@ -1,10 +1,9 @@
-<div class="debtsBox">
-    <div class="logoutButton">
-        <span ng-click="logout()">Log Out</span>
-    </div>
+<section class="debtsBox">
+
     <div class="topTitle">
         <h1>Enter Your Debts</h1>
     </div>
+
     <div class="inputDebtsContainer">
 
         <div class="inputsArea">
@@ -22,8 +21,7 @@
             </div>
         </div>
 
-    </div>
-    <!-- inputDebtsContainer -->
+    </div><!-- inputDebtsContainer -->
 
     <div class="totalBase">
         <p>MonthlyRequirement </p>
@@ -36,29 +34,25 @@
         Your first money waterfall will be <span>{{waterfall | currency}}</span>
     </div>
 
-</div>
-<!-- debtsBox -->
+</section><!-- debtsBox -->
 
-<div class="payoffButtonsContainer fade" ng-show="waterfall">
+<section class="payoffButtonsContainer fade" ng-show="waterfall">
     <p>
         <button class="payoffButton" type="button" ng-click="payTheBills(waterfall, debts, 'balance'); showFinalIdeas(); hideBeforePayments()">Sort and pay debts by smallest balance first</button>
-        <!-- <span ng-show="sorter === '+balance'"></span> -->
     </p>
     <span class="sortExpl">Recommended because the faster results will help you stick with it!</span>
     <p>
         <button class="payoffButton" type="button" ng-click="payTheBills(waterfall, debts, 'rate'); showFinalIdeas(); hideBeforePayments()">Sort and pay debts by highest interest rate first</button>
-        <!-- <span ng-show="sorter === '-rate'"></span> -->
     </p>
     <span class="sortExpl">This method might save some interest in the long run</span>
 
-</div>
-<!-- payoffButtonsContainer -->
+</section><!-- payoffButtonsContainer -->
 
 <div class="sortMessage fade" ng-show="waterfall">
     <span>Currently sorted by: {{sorter}}</span>
 </div>
 
-<div class="debtCards">
+<section class="debtCards">
 
     <div class="debtCars_full fade" ng-repeat="debt in debts | orderBy : sorter" ng-if="beforePayments">
         <button class="deleteDebtButton_before" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button>
@@ -80,8 +74,10 @@
                 <td class="dCard_RPB_col2">{{debt.balance | currency}}</td>
             </tr>
         </table>
-    </div>
+    </div><!-- debtCars_full fade -->
+
     <div ng-repeat="debt in newDebts | orderBy : sorter">
+
         <div class="debtCards_debtSide_container fade" ng-if="!beforePayments">
             <div class="debtCards_debtSide">
                 <button class="deleteDebtButton_after" type="button" name="deleteDebt" class="deleteDebtButton" ng-click="deleteDebt(debt)"><i class="fa fa-trash-o"></i></button>
@@ -103,24 +99,22 @@
                         <td class="dCard_RPB_col2">{{debt.balance | currency}}</td>
                     </tr>
                 </table>
-            </div>
-        </div>
-        <div class="debtCards_timeSide_container" ng-if="!beforePayments">
+            </div><!-- debtCards_debtSide -->
+        </div><!-- debtCards_debtSide_container fade -->
 
+        <div class="debtCards_timeSide_container" ng-if="!beforePayments">
             <div class="debtCards_timeSide">
-                <p>
-                    Paid-Off Date:
-                </p>
-                <p>
-                    {{debt.months | date: 'MMM yyyy'}}
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- debtCards -->
+                <p>Paid-Off Date:</p>
+                <p>{{debt.months | date: 'MMM yyyy'}}</p>
+            </div><!-- debtCards_timeSide -->
+        </div><!-- debtCards_timeSide_container -->
+
+    </div><!-- debtCars_full -->
+
+</section><!-- debtCards -->
 
 <div class="clearFloat"></div>
+
 <div class="finalIdeas" ng-show="finalIdeas">
     <h3>You could be debt FREE by {{newDebts[newDebts.length -1].months | date: 'MMM yyyy'}} and have {{moneyCommitted | currency}} in disposable income!</h3>
     <p class="life">What would your life look like then?</p>

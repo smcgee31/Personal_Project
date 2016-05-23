@@ -10,6 +10,7 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var keys = require('./keys.js');
 var passport = require('./services/passport.js');
 var serverConfig = require('./server_config.js');
+var favicon = require('serve-favicon');
 var port = serverConfig.serverPort;
 var moment = require('moment');
 moment().format();
@@ -69,7 +70,8 @@ app.get('/me', function(req, res, next) {
     res.send(req.user);
 });
 
-app.use(express.static(__dirname+'/public'));
+app.use(express.static( __dirname + '/public' ));
+app.use(favicon( __dirname + '/public/img/favicon.ico' ));
 
 app.use(bodyParser.json());
 

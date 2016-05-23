@@ -3,7 +3,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* HTML5 display-role reset for older browsers */
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 /* box-sizing to most items */
-body,header,main,footer,div,article,aside,details,figcaption,figure,hgroup,menu,nav,input,textarea,select,a,p,ul,ol,li,span{box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+body,header,main,footer,div,section,article,aside,details,figcaption,figure,hgroup,menu,nav,input,textarea,select,a,p,ul,ol,li,span{box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
 /* end reset */
 
 html,
@@ -13,27 +13,12 @@ body {
 	height:100%;
 	font-family: 'Open Sans', sans-serif;
 	background: #E0EFDD;
-	/*background: #9BCB52;
-	background: -moz-linear-gradient(top,  #9BCB52 0%, #DA751D 100%);
-	background: -webkit-linear-gradient(top,  #9BCB52 0%,#DA751D 100%);
-	background: linear-gradient(to bottom,  #9BCB52 0%,#DA751D 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9BCB52', endColorstr='#DA751D',GradientType=0 ); */
-
 }
 #mainWrapper {
 	min-height: 100%;
-	/*position: relative;*/
-	/*margin-bottom: 200px;*/
 }
-/*#mainWrapper:after {
-	content: "";
-	display: block;
-}*/
-
-
 #headerWrapper {
 	background: #A6CE95;
-	/*padding: 18px;*/
 }
 .headerContainer {
 	width: 100%;
@@ -59,7 +44,6 @@ body {
 	    list-style-type: none;
 	    margin: 0;
 	    padding: 0;
-	    /*overflow: hidden;*/
 	    background-color: #A6CE95;
 	}
 		.navLinks li {
@@ -96,9 +80,6 @@ body {
 
 
 
-/*#contentWrapper {
-	padding-bottom: 160px; /* Height of the footer element */
-}*/
 
 
 
@@ -157,9 +138,7 @@ body {
 		margin-bottom: 60px;
 	}
 	.publicGraphsArea {
-		/*border: 1px solid blue;*/
 		width: 80%;
-		/*height: 300px;*/
 		margin: 20px auto;
 		display: flex;
 
@@ -220,6 +199,9 @@ body {
 
 
 
+
+
+
 /*--- SIGNUP AND LOGIN STUFF ---*/
 
 
@@ -262,7 +244,6 @@ body {
 		color: #35794B;
 		text-shadow: 2px 2px 1px #3a4726;
 	}
-
 .waterfallCopy {
 	margin: 20px 20px 10px 20px;
 	font-family: 'Open Sans', sans-serif;
@@ -291,20 +272,9 @@ body {
 .signUpButton:hover {
 	background: #B56117
 }
-/*.facebookButton {
-	width: 330px;
-	height: 40px;
-	background: url(/img/LoginFB_large.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	border-radius: 5px;
-	margin-top: 12px;
-}*/
 .loginFormContainer {
-	width: 100%; /* was 340px*/
-    /*height: 360px;*/
+	width: 100%;
     margin: 0 auto;
-    /*padding: 30px 0;*/
 	text-align: center;
 }
 .formHolder {
@@ -477,13 +447,9 @@ body {
 	left: 200px;
 	width: 20px;
 	height: 20px;
-	/*color: whitesmoke;*/
 	font-size: 15px;
 	background: #fff;
 	border: none;
-	/*margin-right: 4px;
-	margin-left: 4%;
-    margin-top: 12px;*/
 }
 .deleteDebtButton_after {
 	position: relative;
@@ -491,13 +457,9 @@ body {
 	left: 18px;
 	width: 20px;
 	height: 20px;
-	/*color: whitesmoke;*/
 	font-size: 15px;
 	background: #fff;
 	border: none;
-	/*margin-right: 4px;
-	margin-left: 4%;
-    margin-top: 12px;*/
 }
 
 .sortMessage {
@@ -508,14 +470,8 @@ body {
 }
 .debtCards {
 	width: 732px;
-	/*height: 100px;*/
 	margin: 0 auto;
-	/*border-radius: 8px;*/
-	/*box-shadow: 0px 1px 2px #234214;*/
-	/*-webkit-box-shadow: 0px 1px 2px #234214;*/
-	/*background-color: #fff;*/
 	margin: 20px auto;
-	/*line-height: 20px;*/
 }
 .debtCars_full {
 	width: 100%;
@@ -654,7 +610,7 @@ body {
 
 
 
-#footerWrapper, #mainWrapper:after {
+#footerWrapper, #mainWrapper::after {
 	height: 200px
 }
 
@@ -684,7 +640,7 @@ body {
 	color: whitesmoke;
 }
 .socialIconsContainer {
-	width: 47vw;
+	width: 56vw;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-around;

@@ -8,16 +8,13 @@ angular.module('waterfallApp', ['ui.router', 'ngAnimate'])
     .state('home', {
         url: '/',
         templateUrl: 'views/home.html',
-        controller: 'homeCtrl'
+        controller: 'mainCtrl'
     })
 
     .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
         controller: 'loginCtrl',
-        params: {
-            signupMessage: null
-        },
         resolve: {
             user: function() {
                 return {};

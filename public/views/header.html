@@ -7,7 +7,8 @@
         <div class="navLinks">
             <ul>
                 <li><a ui-sref="signup">Sign Up</a></li>
-                <li><a ui-sref="login">Login</a></li>
+                <li ng-if="location.path() !== '/waterfall'"><a ui-sref="login">Login</a></li>
+                <li ng-if="location.path() === '/waterfall'" ng-click="logout()"><a ui-sref="home">Logout</a></li>
                 <li><a ui-sref="mustReads">Must Reads</a></li>
             </ul>
         </div>

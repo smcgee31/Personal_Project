@@ -14,12 +14,6 @@ angular.module('waterfallApp')
             $scope.beforePayments = false;
         };
 
-        // $scope.beforePayments2 = false;
-        // $scope.hideBeforePayments2 = function() {
-        //     $scope.beforePayments2 = true;
-        // };
-
-
         $scope.predicate = '';
 
         $scope.commit = function(monthlyCommit) {
@@ -105,14 +99,6 @@ angular.module('waterfallApp')
             $scope.refreshUser();
             $scope.newDebts = mathSvc.payTheBills(waterfall, debts, type);
         };
-
-
-
-
-        // .then(function(response) {
-        //     // var newDebtsArray = response;
-        //     console.log(response);
-        // });
 
 
 
