@@ -4,8 +4,7 @@
         <title>Your Money Waterfall</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" src="/img/favicon.ico">
-        <!-- <link rel="stylesheet" type="text/css" href="normalize.css"> -->
+        <link rel="icon" href="/img/favicon.ico">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,800,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
@@ -20,7 +19,7 @@
                 <header-dir ng-if="location.path() !== '/waterfall'"></header-dir>
                 <header2-dir ng-if="location.path() === '/waterfall'"></header2-dir>
     		</div>
-            
+
     		<div id="contentWrapper">
                 <ui-view></ui-view>
     		</div>
