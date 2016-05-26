@@ -77,34 +77,4 @@ angular.module('waterfallApp')
     };
 
 
-// var debts = [
-//     {
-//         name: 'student loan',
-//         rate: 3.25,
-//         base: 55,
-//         balance: 4334
-//     },
-//     {
-//         name: 'visa card',
-//         rate: 29.95,
-//         base: 75,
-//         balance: 3457.44
-//     },
-//     {
-//         name: 'car',
-//         rate: 6.425,
-//         base: 360,
-//         balance: 12775.12
-//     }
-// ];
-
-
-
-
-
-
-
-
-
-
 });
